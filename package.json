@@ -34,7 +34,7 @@
     "gatsby-plugin-styled-components": "^3.3.10",
     "gatsby-source-filesystem": "^2.8.0",
     "gatsby-source-sanity": "^6.0.4",
-    "isomorphic-fetch": "^2.2.1",
+    "isomorphic-fetch": "^3.0.0",
     "kutty": "^0.4.1",
     "netlify-cli": "^2.62.0",
     "netlify-lambda": "^2.0.1",

@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useEffect } from 'react';
-import tw from 'twin.macro';
+import React from 'react';
+// import tw from 'twin.macro';
 
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -44,16 +44,16 @@ import './index.css';
 // import LoadingGrid from '../components/LoadingGrid/LoadingGrid';
 // import ItemGrid from '../components/ItemGrid/ItemGrid';
 
-const H1 = styled.h1`
-  font-size: 5rem;
-  @media (min-width: 300px) {
-    font-size: 5.5rem;
-  }
+// const H1 = styled.h1`
+//   font-size: 5rem;
+//   @media (min-width: 300px) {
+//     font-size: 5.5rem;
+//   }
 
-  @media (min-width: 640px) {
-    font-size: 4vw;
-  }
-`;
+//   @media (min-width: 640px) {
+//     font-size: 4vw;
+//   }
+// `;
 
 const HomePage = ({ data }) => {
   // const shirtList = data.shirts.nodes;
