@@ -33,5 +33,12 @@ export default {
         token: process.env.SANITY_TOKEN,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `src`,
+        path: `${__dirname}/src/`,
+      },
+    },
   ],
 };
