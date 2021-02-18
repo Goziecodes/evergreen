@@ -16,10 +16,10 @@ const turnShirtsIntoPages = async ({ graphql, actions }) => {
       }
     }
   `);
-  console.log(data, 'im node data');
+  // console.log(data, 'im node data');
   // 3. loop over each shirt and create a page for that shirt
   data.shirts.nodes.forEach((shirt) => {
-    console.log('creating a page for ', shirt.name);
+    // console.log('creating a page for ', shirt.name);
     actions.createPage({
       // url for new page
       path: `shirt/${shirt.slug.current}`,
@@ -34,7 +34,7 @@ const turnShirtsIntoPages = async ({ graphql, actions }) => {
 
 //* ********************page 2 ******************************************* */
 const turnDesignsIntoPages = async ({ graphql, actions }) => {
-  console.log('turning designs into pages');
+  // console.log('turning designs into pages');
   // 1. get the template
   const designTemplate = path.resolve('./src/pages/shirts.js');
 
@@ -52,7 +52,7 @@ const turnDesignsIntoPages = async ({ graphql, actions }) => {
 
   // 3. createPage for each design
   data.designs.nodes.forEach((design) => {
-    console.log('creating a page for ', design.name);
+    // console.log('creating a page for ', design.name);
     actions.createPage({
       // url for new page
       path: `design/${design.name}`,
@@ -102,12 +102,12 @@ const turnCustomersIntoPages = async ({ actions, graphql }) => {
   // 3.  figure out how many pages there are based on how many customers there are and how many per page
   const pageSize = parseInt(process.env.GATSBY_PAGE_SIZE);
   const pageCount = Math.ceil(data.customers.totalCount / pageSize);
-  console.log(
-    `there are ${data.customers.totalCount} total clients. And we have ${pageCount} pages with ${pageSize} per page`
-  );
+  // console.log(
+  //   `there are ${data.customers.totalCount} total clients. And we have ${pageCount} pages with ${pageSize} per page`
+  // );
   // 4. loop from 1 to n and create pages for them. (n is number of pages you have)
   Array.from({ length: pageCount }).forEach((_, i) => {
-    console.log(`creating customer page ${i}`);
+    // console.log(`creating customer page ${i}`);
     actions.createPage({
       path: `/gallery/${i + 1}`,
       component: path.resolve('./src/pages/gallery.js'),
