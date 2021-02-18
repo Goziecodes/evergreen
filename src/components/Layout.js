@@ -2,14 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import 'normalize.css';
 import Nav from './Nav';
-import Nav2 from './Nav2';
 import Footer from './Footer';
 import GlobalStyles from '../styles/GlobalStyles';
 import Typography from '../styles/Typography';
 import message from '../assets/images/message-circle.svg';
 
 const ContentStyles = styled.div`
-  // background-color: red;
   border-radius: 50%;
   width: 70px;
   height: 70px;

@@ -1,14 +1,10 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
-// import tw from 'twin.macro';
-
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 import { graphql, Link } from 'gatsby';
-import styled from 'styled-components';
-
 import bulbguy from '../assets/images/bulbguy.svg';
 import innovation from '../assets/images/Innovation.svg';
 import Solar from '../assets/images/solar-panel.inline.svg';

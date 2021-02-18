@@ -14,7 +14,6 @@ export default {
     'gatsby-plugin-styled-components',
     'gatsby-plugin-postcss',
     'gatsby-plugin-react-helmet',
-
     {
       resolve: 'gatsby-plugin-react-svg',
       options: {

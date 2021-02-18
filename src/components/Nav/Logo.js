@@ -4,14 +4,6 @@ import styled from 'styled-components';
 
 import logo from '../../assets/images/logo.svg';
 
-const Logo = () => (
-  <Image as={Link} to="/yes">
-    {/* <img src={logo} alt="Company Logo" /> */}
-  </Image>
-);
-
-export default Logo;
-
 const Image = styled.div`
   // background: red;
   width: 40rem;
@@ -23,12 +15,15 @@ const Image = styled.div`
   position: relative;
   right: 44px;
   top: 5px;
-
-  // img {
-  //   width: 100px;
-  //   height: 100px;
-  // }
 `;
+
+const Logo = () => (
+  <Image as={Link} to="/yes">
+    {/* <img src={logo} alt="Company Logo" /> */}
+  </Image>
+);
+
+export default Logo;
 
 // const Image = styled.div`
 //   // background: red;

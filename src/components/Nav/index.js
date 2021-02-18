@@ -1,23 +1,17 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-// import tw from 'twin.macro';
 import Logo from './Logo';
 import NavbarLinks from './NavLinks';
 
 const Navigation = styled.nav`
   height: 13vh;
-  // width: 100%;
   display: flex;
   position: sticky;
   top: 0;
-  // background-color: #fff;
   align-items: center;
-  // position: relative;
   justify-content: space-between;
   text-transform: uppercase;
-  // border-bottom: 2px solid #33333320;
   margin: 0 auto;
-  // margin-bottom: 10px;
   padding: 0 1vw;
   z-index: 2;
   align-self: center;

@@ -3,7 +3,6 @@ import { graphql } from 'gatsby';
 // import GatsbyImage from 'gatsby-image';
 import Img from 'gatsby-image';
 import SEO from '../components/SEO';
-// import styled from 'styled-components';
 
 const Customer = ({ data: { customer } }) => (
   <>
