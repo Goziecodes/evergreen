@@ -14,18 +14,12 @@ export default {
     'gatsby-plugin-styled-components',
     'gatsby-plugin-postcss',
     'gatsby-plugin-react-helmet',
-    // {
-    //   resolve: 'gatsby-plugin-postcss',
-    //   options: {
-    //     postCssPlugins: [require('tailwindcss')('./tailwind.config.js')],
-    //     // postCssPlugins: [require('tailwindcss'), require('autoprefixer')],
-    //   },
-    // },
+
     {
       resolve: 'gatsby-plugin-react-svg',
       options: {
         rule: {
-          include: /\.inline\.svg$/, // See below to configure properly
+          include: /\.inline\.svg$/,
         },
       },
     },
@@ -39,14 +33,5 @@ export default {
         token: process.env.SANITY_TOKEN,
       },
     },
-    // {
-    //   //   name of plugin im adding
-    //   resolve: 'gatsby-plugin-react-svg',
-    //   options: {
-    //     rule: {
-    //       include: /assets/,
-    //     },
-    //   },
-    // },
   ],
 };

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import tw from 'twin.macro';
+// import tw from 'twin.macro';
 import Logo from './Logo';
 import NavbarLinks from './NavLinks';
 
