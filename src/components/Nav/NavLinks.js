@@ -1,6 +1,10 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
+import home from '../../assets/images/home.svg';
+import services from '../../assets/images/tool.svg';
+import briefcase from '../../assets/images/briefcase.svg';
+import contact from '../../assets/images/users.svg';
 
 const NavItem = styled(Link)`
   text-decoration: none;
@@ -57,12 +61,39 @@ const MenuText = styled.div`
 
 const NavLinks = ({ navbarOpen }) => (
   <>
-    {navbarOpen ? <MenuText>Menu</MenuText> : ''}
-    <NavItem to="/">Home</NavItem>
-    <NavItem to="#services">Services</NavItem>
-    <NavItem to="/projects">Gallery</NavItem>
-    <NavItem to="/products">Products</NavItem>
-    <NavItem to="/404">Contact</NavItem>
+    {navbarOpen ? (
+      <>
+        <MenuText className="font-black mt-4 mb-8">Menu</MenuText>
+        <div className="flex ">
+          <img src={home} alt="" />
+          <NavItem to="/">Home</NavItem>
+        </div>
+        <div className="flex ">
+          <img src={services} alt="" />
+          <NavItem to="#services">Services</NavItem>
+        </div>
+        <div className="flex ">
+          <img src={briefcase} alt="" />
+          <NavItem to="/projects">Portfolio</NavItem>
+        </div>
+        <div className="flex ">
+          <img src={home} alt="" />
+          <NavItem to="/products">Products</NavItem>
+        </div>
+        <div className="flex ">
+          <img src={contact} alt="" />
+          <NavItem to="/404">Contact</NavItem>
+        </div>
+      </>
+    ) : (
+      <>
+        <NavItem to="/">Home</NavItem>
+        <NavItem to="#services">Services</NavItem>
+        <NavItem to="/projects">Gallery</NavItem>
+        <NavItem to="/products">Products</NavItem>
+        <NavItem to="/404">Contact</NavItem>
+      </>
+    )}
   </>
 );
 

@@ -33,7 +33,7 @@ const Navigation = styled.nav`
 
 const Toggle = styled.div`
   display: none;
-  height: 100%;
+  // height: 100%;
   cursor: pointer;
   padding: 0 10vw;
 
@@ -54,7 +54,7 @@ const Navbox = styled.div`
     flex-direction: column;
     position: fixed;
     width: 50%;
-    height: auto;
+    height: 100vh;
     padding-top: 20px;
     justify-content: flex-start;
     // padding-top: 10vh;
@@ -121,6 +121,9 @@ const Nav = () => {
               <Hamburger open={navbarOpen} />
             </Toggle>
             <NavbarLinks navbarOpen={navbarOpen} />
+            <p className="text-xl text-center mt-96 font-bold">
+              Evergreen <br /> Technologies
+            </p>
           </Navbox>
         ) : (
           <Navbox open>

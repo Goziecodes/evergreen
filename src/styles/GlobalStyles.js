@@ -19,6 +19,7 @@ const GlobalStyles = createGlobalStyle`
 
   body {
     font-size: 2rem;
+    overflow-x: hidden;
   }
 
   fieldset {
@@ -49,7 +50,7 @@ const GlobalStyles = createGlobalStyle`
 
   /* Scrollbar Styles */
   body::-webkit-scrollbar {
-    width: 12px;
+    width: 15px;
   }
   html {
     scrollbar-width: thin;
@@ -59,7 +60,7 @@ const GlobalStyles = createGlobalStyle`
     background: var(--white);
   }
   body::-webkit-scrollbar-thumb {
-    background-color: var(--red) ;
+    background-color: #50b34e ;
     border-radius: 6px;
     border: 3px solid var(--white);
   }

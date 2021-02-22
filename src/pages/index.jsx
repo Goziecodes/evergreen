@@ -18,7 +18,7 @@ import services from '../assets/images/tool.svg';
 import user from '../assets/images/user.svg';
 import arrow from '../assets/images/arrow-right.svg';
 import briefcase from '../assets/images/briefcase.svg';
-import phone from '../assets/images/smartphone.svg';
+import phone from '../assets/images/phone.svg';
 import img1 from '../assets/images/close.png';
 import cam1 from '../assets/images/cam1.png';
 import panel from '../assets/images/panel.jpg';
@@ -89,17 +89,14 @@ const HomePage = ({ data }) => {
 
   return (
     <>
-      <section className="bg-white w-screen items-end flex-wrap sm:px-20  sm:flex sm:flex-row  sm:pt-12 sm:justify-center sm:flex-row-reverse ">
-        {/* <div className="bg-white w-screen sm:px-20 sm:mt-72 sm:flex sm:flex-row flex-wrap sm:pt-12 sm:justify-center sm:flex-row-reverse "> */}
-        {/* <div
-          className="w-full h-screen/2   bg-center bg-contain  bg-no-repeat sm:w-1/2 sm:bg-contain sm:h-auto"
-          style={{ backgroundImage: `url(${bulbguy})` }}
-        /> */}
-        <img
-          className="w-full h-screen/2   bg-center bg-contain  bg-no-repeat sm:w-1/2 sm:bg-contain sm:h-auto"
-          src={bulbguy}
-          alt=""
-        />
+      <section className="bg-white w-screen flex items-end lg:items-center flex-wrap  sm:px-20  sm:flex sm:flex-row  sm:pt-12 sm:justify-center sm:flex-row-reverse ">
+        <div className="w-full sm:w-1/2 overflow-hidden">
+          <img
+            className="w-full h-screen/2 relative left-20 sm:static sm:left-0  sm:bg-contain sm:h-auto"
+            src={bulbguy}
+            alt=""
+          />
+        </div>
         <div
           className="w-full sm:w-1/2 sm:h-1/2 text-4xl leading-none sm:text-4xl flex flex-col  sm:leading-normal  md:text-5xl lg:text-6xl sm:flex sm:flex-col md:justify-center sm:text-responsive"
           // style={{
@@ -129,23 +126,12 @@ const HomePage = ({ data }) => {
             className="  hover:bg-green-700 text-white font-bold py-4 px-4 rounded-lg w-60 mt-10 text-4xl self-center sm:self-start "
             style={{
               background: '#50b34e',
-              boxShadow: 'rgba(80, 179, 80, 1) 5px 8px 16px 6px',
+              // boxShadow: 'rgba(80, 179, 80, 1) 5px 8px 16px 6px',
+              boxShadow: '1px 2px 14px 2px rgba(82, 193, 54, 1)',
             }}
           >
             Start now
           </button>
-
-          {/* <H1 className="font-medium text-black">
-            Save up <br /> on
-            <span className="text-blue-500 font-black">Electricity</span>
-            <br />
-            <span className=" text-blue-400 ">
-              <b>Gasoline</b>
-            </span>
-            <span className="text-blue-500">
-              <b> Bills</b>
-            </span>
-          </H1> */}
         </div>
         {/* <div className="text-center w-full "> */}
         {/* <button
@@ -158,7 +144,6 @@ const HomePage = ({ data }) => {
         {/* </div> */}
       </section>
 
-      {/* <div className="bg-white w-screen  h-screen/2  mt-72"> */}
       <section className="bg-white w-screen  mt-72">
         <div className="container mx-auto w-11/12">
           <div className="text-center px-8 md:text-left mb-2 mt-20 text-4xl sm:text-5xl">
@@ -189,10 +174,6 @@ const HomePage = ({ data }) => {
               </p>
             </div>
 
-            {/* <div
-              className="h-60  w-full bg-center bg-contain bg-no-repeat mb-2 sm:h-96 md:relative lg:bottom-14 md:left-14"
-              style={{ backgroundImage: `url(${innovation})` }}
-            /> */}
             <img
               src={innovation}
               alt=""
@@ -277,80 +258,81 @@ const HomePage = ({ data }) => {
         </div>
         <div className="container px-5 py-2 mx-auto lg:px-32">
           <div className="flex flex-wrap  justify-evenly mx-auto ">
-            <div className="w-60 mt-6 lg:w-2/4 lg:pl-10 lg:py-6 lg:mt-0">
+            <div className="w-72 h-96 mt-6 lg:w-96 lg:mt-0 border-2 border-gray-200 rounded-lg">
               <img
                 alt=""
-                className="object-cover object-center w-full h-64 rounded-lg lg:h-auto"
+                className="object-cover object-center w-full h-4/5"
                 src={panel}
               />
-              <div className="flex   mx-auto mt-6 items-center sm:flex-row sm:items-center">
-                <h1 className="flex-grow mb-2 text-2xl font-medium tracking-tighter text-gray-900 title-font">
+              <div className="flex  px-4 mx-auto mt-6 items-center sm:flex-row sm:items-center">
+                <h1 className="flex-grow font-medium mb-2 text-2xl  font-medium tracking-tighter text-gray-900 title-font">
                   Solar Panels
                 </h1>
                 <button
                   type="button"
                   className="flex-shrink-0 px-2 py-1  font-semibold text-white transition duration-500 ease-in-out transform rounded-lg sm:mt-0 bg-gradient-to-r from-blue-700 hover:from-blue-600 to-blue-600 hover:to-blue-700 hover:-translate-y-1 hover:scale-110 focus:shadow-outline focus:outline-none"
                 >
-                  🖂
-                </button>
-              </div>
-            </div>
-            <div className="w-60 mt-6 lg:w-2/4 lg:pl-10 lg:py-6 lg:mt-0">
-              <img
-                alt=""
-                className="object-cover object-center w-full h-64 rounded-lg lg:h-auto"
-                src={ba3}
-              />
-              <div className="flex   mx-auto mt-6 items-center sm:flex-row sm:items-center">
-                <h1 className="flex-grow mb-2 text-2xl font-medium tracking-tighter text-gray-900 title-font">
-                  Batteries{' '}
-                </h1>
-                <button
-                  type="button"
-                  className="flex-shrink-0 px-2 py-1  font-semibold text-white transition duration-500 ease-in-out transform rounded-lg sm:mt-0 bg-gradient-to-r from-blue-700 hover:from-blue-600 to-blue-600 hover:to-blue-700 hover:-translate-y-1 hover:scale-110 focus:shadow-outline focus:outline-none"
-                >
-                  🖂
-                </button>
-              </div>
-            </div>
-            <div className="w-60 mt-6 lg:w-2/4 lg:pl-10 lg:py-6 lg:mt-0">
-              <img
-                alt=""
-                className="object-cover object-center w-full h-64 rounded-lg lg:h-auto"
-                src={charge}
-              />
-              <div className="flex   mx-auto mt-6 items-center sm:flex-row sm:items-center">
-                <h1 className="flex-grow mb-2 text-2xl font-medium tracking-tighter text-gray-900 title-font">
-                  Charge Controllers{' '}
-                </h1>
-                <button
-                  type="button"
-                  className="flex-shrink-0 px-2 py-1  font-semibold text-white transition duration-500 ease-in-out transform rounded-lg sm:mt-0 bg-gradient-to-r from-blue-700 hover:from-blue-600 to-blue-600 hover:to-blue-700 hover:-translate-y-1 hover:scale-110 focus:shadow-outline focus:outline-none"
-                >
-                  🖂
-                </button>
-              </div>
-            </div>
-            <div className="w-60 mt-6 lg:w-2/4 lg:pl-10 lg:py-6 lg:mt-0">
-              <img
-                alt=""
-                className="object-cover object-center w-full h-64 rounded-lg lg:h-auto"
-                src={cam1}
-              />
-              <div className="flex   mx-auto mt-6 items-center sm:flex-row sm:items-center">
-                <h1 className="flex-grow mb-2 text-2xl font-medium tracking-tighter text-gray-900 title-font">
-                  Cameras{' '}
-                </h1>
-                <button
-                  type="button"
-                  className="flex-shrink-0 px-2 py-1  font-semibold text-white transition duration-500 ease-in-out transform rounded-lg sm:mt-0 bg-gradient-to-r from-blue-700 hover:from-blue-600 to-blue-600 hover:to-blue-700 hover:-translate-y-1 hover:scale-110 focus:shadow-outline focus:outline-none"
-                >
-                  🖂
+                  <img src={message} alt="" />
                 </button>
               </div>
             </div>
 
-            <div className="w-full container text-center mt-4">
+            <div className="w-72 h-96 mt-6 lg:w-96 lg:mt-0 border-2 border-gray-200 rounded-lg">
+              <img
+                alt=""
+                className="object-cover object-center w-full h-4/5"
+                src={ba3}
+              />
+              <div className="flex  px-4 mx-auto mt-6 items-center sm:flex-row sm:items-center">
+                <h1 className="flex-grow font-medium mb-2 text-2xl  font-medium tracking-tighter text-gray-900 title-font">
+                  Batteries
+                </h1>
+                <button
+                  type="button"
+                  className="flex-shrink-0 px-2 py-1  font-semibold text-white transition duration-500 ease-in-out transform rounded-lg sm:mt-0 bg-gradient-to-r from-blue-700 hover:from-blue-600 to-blue-600 hover:to-blue-700 hover:-translate-y-1 hover:scale-110 focus:shadow-outline focus:outline-none"
+                >
+                  <img src={message} alt="" />
+                </button>
+              </div>
+            </div>
+            <div className="w-72 h-96 mt-6 lg:w-96 lg:mt-0 border-2 border-gray-200 rounded-lg">
+              <img
+                alt=""
+                className="object-cover object-center w-full h-4/5"
+                src={charge}
+              />
+              <div className="flex  px-4 mx-auto mt-6 items-center sm:flex-row sm:items-center">
+                <h1 className="flex-grow font-medium mb-2 text-2xl  font-medium tracking-tighter text-gray-900 title-font">
+                  Charge Controllers
+                </h1>
+                <button
+                  type="button"
+                  className="flex-shrink-0 px-2 py-1  font-semibold text-white transition duration-500 ease-in-out transform rounded-lg sm:mt-0 bg-gradient-to-r from-blue-700 hover:from-blue-600 to-blue-600 hover:to-blue-700 hover:-translate-y-1 hover:scale-110 focus:shadow-outline focus:outline-none"
+                >
+                  <img src={message} alt="" />
+                </button>
+              </div>
+            </div>
+            <div className="w-72 h-96 mt-6 lg:w-96 lg:mt-0 border-2 border-gray-200 rounded-lg">
+              <img
+                alt=""
+                className="object-cover object-center w-full h-4/5"
+                src={cam1}
+              />
+              <div className="flex  px-4 mx-auto mt-6 items-center sm:flex-row sm:items-center">
+                <h1 className="flex-grow font-medium mb-2 text-2xl  font-medium tracking-tighter text-gray-900 title-font">
+                  Cameras
+                </h1>
+                <button
+                  type="button"
+                  className="flex-shrink-0 px-2 py-1  font-semibold text-white transition duration-500 ease-in-out transform rounded-lg sm:mt-0 bg-gradient-to-r from-blue-700 hover:from-blue-600 to-blue-600 hover:to-blue-700 hover:-translate-y-1 hover:scale-110 focus:shadow-outline focus:outline-none"
+                >
+                  <img src={message} alt="" />
+                </button>
+              </div>
+            </div>
+
+            <div className="w-full container text-center mt-20">
               <button
                 type="button"
                 className="bg-blue-600  p-4 w-1/2 rounded-full"
@@ -365,7 +347,7 @@ const HomePage = ({ data }) => {
         </div>
       </section>
 
-      <section className="mt-20 h-auto mb-20">
+      <section className="mt-20 h-auto mb-20 px-2">
         <div className="flex justify-around mb-8">
           <h1 className="text-center">
             <span className="text-blue-400">Our</span>{' '}
@@ -383,9 +365,9 @@ const HomePage = ({ data }) => {
             className="mr-5 br-20 bg-blue-500 hover:bg-blue-700 text-white font-bold   rounded-lg  focus:outline-none focus:bg-blue-700"
             style={{ transition: ' all .15s ease' }}
           >
-            <p className="">
+            <Link className="text-white" to="/projects">
               <b>See More ⇒</b>
-            </p>{' '}
+            </Link>
           </button>
           {/* </div> */}
         </div>
@@ -414,15 +396,59 @@ const HomePage = ({ data }) => {
             </div>
             <div>
               <img src={work2} alt="" />
+              <div className="text-2xl">
+                <p>
+                  <b>2400Ah solar bank system</b>
+                </p>
+                <p>
+                  <b>Client: Mr. Cyril Adekunle</b>
+                </p>
+                <p>
+                  <b>Category: Solar Installation</b>
+                </p>
+              </div>
             </div>
             <div>
               <img src={work3} alt="" />{' '}
+              <div className="text-2xl">
+                <p>
+                  <b>2400Ah solar bank system</b>
+                </p>
+                <p>
+                  <b>Client: Mr. Cyril Adekunle</b>
+                </p>
+                <p>
+                  <b>Category: Solar Installation</b>
+                </p>
+              </div>
             </div>
             <div>
               <img src={work4} alt="" />{' '}
+              <div className="text-2xl">
+                <p>
+                  <b>2400Ah solar bank system</b>
+                </p>
+                <p>
+                  <b>Client: Mr. Cyril Adekunle</b>
+                </p>
+                <p>
+                  <b>Category: Solar Installation</b>
+                </p>
+              </div>
             </div>
             <div>
               <img src={work5} alt="" />{' '}
+              <div className="text-2xl">
+                <p>
+                  <b>2400Ah solar bank system</b>
+                </p>
+                <p>
+                  <b>Client: Mr. Cyril Adekunle</b>
+                </p>
+                <p>
+                  <b>Category: Solar Installation</b>
+                </p>
+              </div>
             </div>
           </Slider>
           {/* <div className="w-full h-24 bg-red-400">d</div> */}
@@ -447,7 +473,7 @@ const HomePage = ({ data }) => {
           <div className="form  mt-8 mb-8 ">
             <form action="/yes" method="post" className="w-full ">
               <div className=" flex  mb-8">
-                <div className="bg-blue-500 w-20 h-20 brr-20 rounded-l-lg flex justify-center items-center">
+                <div className="bg-blue-500 w-20  brr-20  rounded-l-lg flex justify-center items-center">
                   <img src={user} alt="" />
                 </div>
                 <input
@@ -458,7 +484,7 @@ const HomePage = ({ data }) => {
               </div>
 
               <div className=" flex  mb-8">
-                <div className="bg-blue-500 w-20 h-20 brr-20 rounded-l-lg flex justify-center items-center">
+                <div className="bg-blue-500 w-20  brr-20 rounded-l-lg flex justify-center items-center">
                   <img src={phone} alt="" />
                 </div>
                 <input
@@ -483,14 +509,17 @@ const HomePage = ({ data }) => {
               </div>
 
               <div className=" flex justify-center mb-2">
-                <input
-                  type="submit"
-                  value="Send"
-                  className="px-3 py-5 text-3xl w-30 placeholder-gray-400 text-gray-700  bg-white bg-white rounded-l-lg  shadow outline-none focus:outline-none focus:shadow-outline  pl-10 border-2 border-blue-400"
-                />
-                <div className="bg-blue-500 w-20 h-20 brr-20 rounded-r-lg flex justify-center items-center">
-                  <img src={send} alt="" />
-                </div>
+                <button
+                  type="button"
+                  className="  hover:bg-green-700 text-white font-bold py-4 px-4 rounded-lg w-60 mt-4 mb-10 text-4xl self-center sm:self-start "
+                  style={{
+                    background: '#50b34e',
+                    // boxShadow: 'rgba(80, 179, 80, 1) 5px 8px 16px 6px',
+                    boxShadow: '1px 2px 14px 2px rgba(82, 193, 54, 1)',
+                  }}
+                >
+                  Submit
+                </button>
               </div>
             </form>
           </div>
