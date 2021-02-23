@@ -159,8 +159,8 @@ const HomePage = ({ data }) => {
           </div>
 
           <div className=" flex flex-col lg:flex-row lg:justify-around w-full h-auto mt-20">
-            <div className="text-left px-8 text-4xl leading-normal flex justify-center  md:text-5xl md:leading-loose">
-              <p>
+            <div className="text-left px-8 sm:text-5xl text-4xl leading-normal flex justify-center   md:leading-loose text-black">
+              <p className="font-medium antialiased">
                 <b
                   className="font-medium leading-10"
                   style={{ fontFamily: 'GilroyBold' }}
@@ -205,7 +205,7 @@ const HomePage = ({ data }) => {
             </h3>
           </div>
 
-          <div className="px-2 text-4xl leading-normal md:text-5xl md:leading-loose mb-12 flex  flex-row-reverse  justify-between  lg:flex-row">
+          <div className="px-2 text-4xl leading-normal md:text-5xl text-black font-medium  md:leading-loose mb-12 flex  flex-row-reverse  justify-between  lg:flex-row">
             <div className="h-96 lg:h-35 w-75  lg:relative lg:bottom-40 ">
               <Camera className="w-full h-full transform scale-x-minus1 lg:transform-none" />
             </div>
@@ -229,7 +229,7 @@ const HomePage = ({ data }) => {
             </h3>
           </div>
 
-          <div className="px-2 text-right text-4xl leading-normal md:text-5xl md:leading-loose mb-12 flex   justify-between  flex-row">
+          <div className="px-2 text-right text-4xl leading-normal md:text-5xl text-black font-medium md:leading-loose mb-12 flex   justify-between  flex-row">
             <div className="h-96 w-63 lg:h-35 lg:w-75  lg:relative lg:bottom-40 ">
               <Solar className="w-full h-full" />
             </div>
@@ -244,7 +244,7 @@ const HomePage = ({ data }) => {
         </div>
       </section>
 
-      <section className="w-full overflow-hidden h-auto bg-white mt-8 clear-both">
+      <section className="w-full overflow-hidden h-auto bg-white mt-8 clear-both ">
         <div className="flex justify-around mb-8">
           <h1 className="text-center">
             <span className="text-blue-400">Our</span>{' '}
@@ -257,7 +257,7 @@ const HomePage = ({ data }) => {
           </h1>
         </div>
         <div className="container px-5 py-2 mx-auto lg:px-32">
-          <div className="flex flex-wrap  justify-evenly mx-auto ">
+          <div className="flex flex-wrap  justify-evenly mx-auto text-black font-medium  text-sm leading-none ">
             <div className="w-72 h-96 mt-6 lg:w-96 lg:mt-0 border-2 border-gray-200 rounded-lg">
               <img
                 alt=""
@@ -265,7 +265,7 @@ const HomePage = ({ data }) => {
                 src={panel}
               />
               <div className="flex  px-4 mx-auto mt-6 items-center sm:flex-row sm:items-center">
-                <h1 className="flex-grow font-medium mb-2 text-2xl  font-medium tracking-tighter text-gray-900 title-font">
+                <h1 className="flex-grow   mb-2  tracking-tighter  title-font">
                   Solar Panels
                 </h1>
                 <button
@@ -284,7 +284,7 @@ const HomePage = ({ data }) => {
                 src={ba3}
               />
               <div className="flex  px-4 mx-auto mt-6 items-center sm:flex-row sm:items-center">
-                <h1 className="flex-grow font-medium mb-2 text-2xl  font-medium tracking-tighter text-gray-900 title-font">
+                <h1 className="flex-grow  mb-2    tracking-tighter  title-font">
                   Batteries
                 </h1>
                 <button
@@ -301,8 +301,8 @@ const HomePage = ({ data }) => {
                 className="object-cover object-center w-full h-4/5"
                 src={charge}
               />
-              <div className="flex  px-4 mx-auto mt-6 items-center sm:flex-row sm:items-center">
-                <h1 className="flex-grow font-medium mb-2 text-2xl  font-medium tracking-tighter text-gray-900 title-font">
+              <div className="flex   px-4 mx-auto mt-6 items-center sm:flex-row sm:items-center">
+                <h1 className="flex-grow   tracking-tighter title-font">
                   Charge Controllers
                 </h1>
                 <button
@@ -320,7 +320,7 @@ const HomePage = ({ data }) => {
                 src={cam1}
               />
               <div className="flex  px-4 mx-auto mt-6 items-center sm:flex-row sm:items-center">
-                <h1 className="flex-grow font-medium mb-2 text-2xl  font-medium tracking-tighter text-gray-900 title-font">
+                <h1 className="flex-grow  mb-2  font-medium tracking-tighter  title-font">
                   Cameras
                 </h1>
                 <button
@@ -335,9 +335,12 @@ const HomePage = ({ data }) => {
             <div className="w-full container text-center mt-20">
               <button
                 type="button"
-                className="bg-blue-600  p-4 w-1/2 rounded-full"
+                className="bg-blue-400  p-4 w-1/2 rounded-full"
               >
-                <Link className="text-white" to="/products">
+                <Link
+                  className="text-white text-3xl font-medium"
+                  to="/products"
+                >
                   {' '}
                   Shop Now
                 </Link>
@@ -348,8 +351,8 @@ const HomePage = ({ data }) => {
       </section>
 
       <section className="mt-20 h-auto mb-20 px-2">
-        <div className="flex justify-around mb-8">
-          <h1 className="text-center">
+        <div className="flex justify-between mb-8 pl-8">
+          <h1 className="text-center text-5xl">
             <span className="text-blue-400">Our</span>{' '}
             <span
               className="text-blue-500 font-medium"
@@ -362,7 +365,7 @@ const HomePage = ({ data }) => {
           {/* <div className="flex text-4xl text-blue-400 items-center "> */}
           <button
             type="button"
-            className="mr-5 br-20 bg-blue-500 hover:bg-blue-700 text-white font-bold   rounded-lg  focus:outline-none focus:bg-blue-700"
+            className="mr-5 br-20 bg-blue-400 hover:bg-blue-700 text-white font-bold   rounded-lg text-lg  focus:outline-none focus:bg-blue-700"
             style={{ transition: ' all .15s ease' }}
           >
             <Link className="text-white" to="/projects">
@@ -372,7 +375,7 @@ const HomePage = ({ data }) => {
           {/* </div> */}
         </div>
 
-        <div className="px-8 mb-4">
+        <div className="px-8 mb-4  text-black font-medium">
           An extract of some of our executed projects in various locations
           around the country...
         </div>
@@ -455,25 +458,43 @@ const HomePage = ({ data }) => {
         </div>
       </section>
 
-      <section className="h-auto w-full px-8 bg-white mt-44 ">
-        <div className="w-full px-2 text-4xl leading-small md:text-5xl lg:text-center">
+      <section id="contact" className="h-auto w-full px-8 bg-white mt-44 ">
+        {/* text-4xl leading-small */}
+        {/* md:text-5xl */}
+        <div className="w-full px-2 md:text-center font-medium">
           <h1 className="mb-8">
-            <span className="text-blue-600">Contact</span>{' '}
+            <span
+              className="text-blue-500"
+              style={{ fontFamily: 'GilroyBold' }}
+            >
+              Contact
+            </span>{' '}
             <span className="text-blue-400">Us</span>
           </h1>
           <p>
-            <span className="text-blue-600">
+            <span className="text-blue-500">
               <b>Got a Question??</b>{' '}
             </span>
             reach out to us today
           </p>
         </div>
 
+        {/* <div className="flex justify-between mb-8 pl-8">
+          <h1 className="text-center text-5xl">
+            <span className="text-blue-400">Our</span>{' '}
+            <span
+              className="text-blue-500 font-medium"
+              style={{ fontFamily: 'GilroyBold' }}
+            >
+              Projects
+            </span>
+          </h1> */}
+
         <div className="container mx-auto pt-8 w-full lg:w-3/5">
           <div className="form  mt-8 mb-8 ">
             <form action="/yes" method="post" className="w-full ">
               <div className=" flex  mb-8">
-                <div className="bg-blue-500 w-20  brr-20  rounded-l-lg flex justify-center items-center">
+                <div className="bg-blue-400 w-20  brr-20  rounded-l-lg flex justify-center items-center">
                   <img src={user} alt="" />
                 </div>
                 <input
@@ -484,7 +505,7 @@ const HomePage = ({ data }) => {
               </div>
 
               <div className=" flex  mb-8">
-                <div className="bg-blue-500 w-20  brr-20 rounded-l-lg flex justify-center items-center">
+                <div className="bg-blue-400 w-20  brr-20 rounded-l-lg flex justify-center items-center">
                   <img src={phone} alt="" />
                 </div>
                 <input
@@ -495,7 +516,7 @@ const HomePage = ({ data }) => {
               </div>
 
               <div className=" flex flex-col mb-12">
-                <div className="bg-blue-500 w-full h-20 brr-20 rounded-t-lg flex px-4  items-center text-white">
+                <div className="bg-blue-400 w-full h-20 brr-20 rounded-t-lg flex px-4  items-center text-white">
                   <img src={message2} alt="" className="mr-14" />
                   <h3>Your message/enquiry</h3>
                 </div>

@@ -6,9 +6,9 @@ const Footer = () => (
   <div>
     {/* <div className="css-shapes-preview" /> */}
 
-    <footer className="mt-10 text-white bg-blue-600  body-font w-full pt-14 ">
+    <footer className="mt-10 text-white bg-blue-500  body-font w-full pt-14 ">
       <div className="flex flex-wrap justify-between  w-full">
-        <div className="w-1/2 ml-8 pl-10  text-left text-3xl text-white">
+        <div className="w-1/2 ml-8 pl-3  text-left text-3xl text-white">
           <div className="flex  items-center">
             <img src={map} alt="" className="mr-4 h-14" />
             <p className=" ">

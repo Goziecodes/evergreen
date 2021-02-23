@@ -14,7 +14,7 @@ const Projects = () => {
   const [showSolar, setshow] = useState(true);
   return (
     <>
-      <div className="text-center mb-20 text-4xl lg:text-left lg:px-40 lg:text-5xl mt-12 ">
+      <div className="text-center mb-20 text-4xl lg:text-left px-20 lg:px-28 lg:text-5xl mt-12 ">
         <h1 className="text-blue-400 mb-8">
           <span>Our</span>{' '}
           <span>
@@ -28,7 +28,7 @@ const Projects = () => {
         </h1>
       </div>
 
-      <div className="text-left text-5xl px-8 text-blue-500  mb-8">
+      <div className="text-left text-5xl px-20 lg:px-28 text-blue-500  mb-8">
         <h3>
           <b>Categories</b>
         </h3>
@@ -36,7 +36,7 @@ const Projects = () => {
         <div className="w-96 flex border border-blue-400 rounded-full text-4xl mt-8 overflow-hidden">
           <button
             type="button"
-            onClick={({ showSolar }) => setshow(!showSolar)}
+            onClick={() => setshow(!showSolar)}
             className={`w-1/2 ${
               showSolar ? 'bg-blue-400 text-white' : 'bg-white text-blue-400'
             }  text-center`}
@@ -45,7 +45,7 @@ const Projects = () => {
           </button>
           <button
             type="button"
-            onClick={(showSolar) => setshow(!showSolar)}
+            onClick={() => setshow(!showSolar)}
             className={`w-1/2 ${
               showSolar ? 'bg-white text-blue-400' : 'bg-blue-400 text-white'
             }  text-center`}
@@ -56,7 +56,7 @@ const Projects = () => {
       </div>
 
       {showSolar ? (
-        <div className="container px-5 py-2 mx-auto lg:px-32">
+        <div className="container px-5 py-2 mx-auto lg:px-5">
           <div className="flex flex-wrap  justify-evenly mx-auto ">
             <div className="w-4/5  mt-6 lg:w-4/12 lg:pl-10 lg:py-6 lg:mt-0">
               <img

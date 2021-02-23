@@ -18,7 +18,7 @@ const Image = styled.div`
 `;
 
 const Logo = () => (
-  <Image as={Link} to="/yes">
+  <Image as={Link} to="/#">
     {/* <img src={logo} alt="Company Logo" /> */}
   </Image>
 );

@@ -66,15 +66,15 @@ const NavLinks = ({ navbarOpen }) => (
         <MenuText className="font-black mt-4 mb-8">Menu</MenuText>
         <div className="flex ">
           <img src={home} alt="" />
-          <NavItem to="/">Home</NavItem>
+          <NavItem to="/#">Home</NavItem>
         </div>
         <div className="flex ">
           <img src={services} alt="" />
-          <NavItem to="#services">Services</NavItem>
+          <NavItem to="/#services">Services</NavItem>
         </div>
         <div className="flex ">
           <img src={briefcase} alt="" />
-          <NavItem to="/projects">Portfolio</NavItem>
+          <NavItem to="/projects">Projects</NavItem>
         </div>
         <div className="flex ">
           <img src={home} alt="" />
@@ -82,16 +82,26 @@ const NavLinks = ({ navbarOpen }) => (
         </div>
         <div className="flex ">
           <img src={contact} alt="" />
-          <NavItem to="/404">Contact</NavItem>
+          <NavItem to="/#contact">Contact</NavItem>
         </div>
       </>
     ) : (
       <>
-        <NavItem to="/">Home</NavItem>
-        <NavItem to="#services">Services</NavItem>
-        <NavItem to="/projects">Gallery</NavItem>
-        <NavItem to="/products">Products</NavItem>
-        <NavItem to="/404">Contact</NavItem>
+        <NavItem className="font-medium text-black" to="/#">
+          Home
+        </NavItem>
+        <NavItem className="font-medium text-black" to="/#services">
+          Services
+        </NavItem>
+        <NavItem className="font-medium text-black" to="/projects">
+          Projects
+        </NavItem>
+        <NavItem className="font-medium text-black" to="/products">
+          Products
+        </NavItem>
+        <NavItem className="font-medium text-black" to="/#contact">
+          Contact
+        </NavItem>
       </>
     )}
   </>

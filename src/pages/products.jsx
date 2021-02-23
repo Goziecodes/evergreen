@@ -9,6 +9,7 @@ import panel2 from '../assets/images/panel2.png';
 import ba3 from '../assets/images/ba3.png';
 import charge from '../assets/images/charge.png';
 import inverter from '../assets/images/inverter.png';
+import message from '../assets/images/message-circle.svg';
 
 const Products = () => {
   const [showSolar, setshow] = useState(true);
@@ -36,7 +37,7 @@ const Products = () => {
         <div className="w-96 flex border border-blue-400 rounded-full text-4xl mt-8 overflow-hidden">
           <button
             type="button"
-            onClick={({ showSolar }) => setshow(!showSolar)}
+            onClick={() => setshow(!showSolar)}
             className={`w-1/2 ${
               showSolar ? 'bg-blue-400 text-white' : 'bg-white text-blue-400'
             }  text-center`}
@@ -45,7 +46,7 @@ const Products = () => {
           </button>
           <button
             type="button"
-            onClick={(showSolar) => setshow(!showSolar)}
+            onClick={() => setshow(!showSolar)}
             className={`w-1/2 ${
               showSolar ? 'bg-white text-blue-400' : 'bg-blue-400 text-white'
             }  text-center`}
@@ -69,15 +70,15 @@ const Products = () => {
                   }}
                 />
                 <div className="flex   mx-auto mt-6 items-center sm:flex-row sm:items-center">
-                  <h1 className="flex-grow mb-2 text-2xl font-medium tracking-tighter text-gray-900 title-font">
+                  <h1 className="flex-grow mb-2 text-2xl font-medium tracking-tighter text-black title-font">
                     Solar Panels
                   </h1>
-                  <button
-                    type="button"
+                  <Link
+                    to="/button"
                     className="flex-shrink-0 px-2 py-1  font-semibold text-white transition duration-500 ease-in-out transform rounded-lg sm:mt-0 bg-gradient-to-r from-blue-700 hover:from-blue-600 to-blue-600 hover:to-blue-700 hover:-translate-y-1 hover:scale-110 focus:shadow-outline focus:outline-none"
                   >
-                    🖂
-                  </button>
+                    <img src={message} alt="" />
+                  </Link>
                 </div>
               </div>
             </Link>
@@ -93,15 +94,15 @@ const Products = () => {
                   }}
                 />
                 <div className="flex   mx-auto mt-6 items-center sm:flex-row sm:items-center">
-                  <h1 className="flex-grow mb-2 text-2xl font-medium tracking-tighter text-gray-900 title-font">
+                  <h1 className="flex-grow mb-2 text-2xl font-medium tracking-tighter text-black title-font">
                     Batteries{' '}
                   </h1>
-                  <button
-                    type="button"
+                  <Link
+                    to="/button"
                     className="flex-shrink-0 px-2 py-1  font-semibold text-white transition duration-500 ease-in-out transform rounded-lg sm:mt-0 bg-gradient-to-r from-blue-700 hover:from-blue-600 to-blue-600 hover:to-blue-700 hover:-translate-y-1 hover:scale-110 focus:shadow-outline focus:outline-none"
                   >
-                    🖂
-                  </button>
+                    <img src={message} alt="" />
+                  </Link>
                 </div>
               </div>
             </Link>
@@ -117,15 +118,15 @@ const Products = () => {
                   }}
                 />
                 <div className="flex   mx-auto mt-6 items-center sm:flex-row sm:items-center">
-                  <h1 className="flex-grow mb-2 text-2xl font-medium tracking-tighter text-gray-900 title-font">
+                  <h1 className="flex-grow mb-2 text-2xl font-medium tracking-tighter text-black title-font">
                     Charge Controllers{' '}
                   </h1>
-                  <button
-                    type="button"
+                  <Link
+                    to="/button"
                     className="flex-shrink-0 px-2 py-1  font-semibold text-white transition duration-500 ease-in-out transform rounded-lg sm:mt-0 bg-gradient-to-r from-blue-700 hover:from-blue-600 to-blue-600 hover:to-blue-700 hover:-translate-y-1 hover:scale-110 focus:shadow-outline focus:outline-none"
                   >
-                    🖂
-                  </button>
+                    <img src={message} alt="" />
+                  </Link>
                 </div>
               </div>
             </Link>
@@ -141,15 +142,15 @@ const Products = () => {
                   }}
                 />
                 <div className="flex   mx-auto mt-6 items-center sm:flex-row sm:items-center">
-                  <h1 className="flex-grow mb-2 text-2xl font-medium tracking-tighter text-gray-900 title-font">
+                  <h1 className="flex-grow mb-2 text-2xl font-medium tracking-tighter text-black title-font">
                     Cameras{' '}
                   </h1>
-                  <button
-                    type="button"
+                  <Link
+                    to="/button"
                     className="flex-shrink-0 px-2 py-1  font-semibold text-white transition duration-500 ease-in-out transform rounded-lg sm:mt-0 bg-gradient-to-r from-blue-700 hover:from-blue-600 to-blue-600 hover:to-blue-700 hover:-translate-y-1 hover:scale-110 focus:shadow-outline focus:outline-none"
                   >
-                    🖂
-                  </button>
+                    <img src={message} alt="" />
+                  </Link>
                 </div>
               </div>
             </Link>
@@ -165,15 +166,15 @@ const Products = () => {
                   }}
                 />
                 <div className="flex   mx-auto mt-6 items-center sm:flex-row sm:items-center">
-                  <h1 className="flex-grow mb-2 text-2xl font-medium tracking-tighter text-gray-900 title-font">
+                  <h1 className="flex-grow mb-2 text-2xl font-medium tracking-tighter text-black title-font">
                     Inverters{' '}
                   </h1>
-                  <button
-                    type="button"
+                  <Link
+                    to="/button"
                     className="flex-shrink-0 px-2 py-1  font-semibold text-white transition duration-500 ease-in-out transform rounded-lg sm:mt-0 bg-gradient-to-r from-blue-700 hover:from-blue-600 to-blue-600 hover:to-blue-700 hover:-translate-y-1 hover:scale-110 focus:shadow-outline focus:outline-none"
                   >
-                    🖂
-                  </button>
+                    <img src={message} alt="" />
+                  </Link>
                 </div>
               </div>
             </Link>
@@ -193,15 +194,15 @@ const Products = () => {
                   }}
                 />
                 <div className="flex   mx-auto mt-6 items-center sm:flex-row sm:items-center">
-                  <h1 className="flex-grow mb-2 text-2xl font-medium tracking-tighter text-gray-900 title-font">
+                  <h1 className="flex-grow mb-2 text-2xl font-medium tracking-tighter text-black title-font">
                     Solar Panels
                   </h1>
-                  <button
-                    type="button"
+                  <Link
+                    to="/button"
                     className="flex-shrink-0 px-2 py-1  font-semibold text-white transition duration-500 ease-in-out transform rounded-lg sm:mt-0 bg-gradient-to-r from-blue-700 hover:from-blue-600 to-blue-600 hover:to-blue-700 hover:-translate-y-1 hover:scale-110 focus:shadow-outline focus:outline-none"
                   >
-                    🖂
-                  </button>
+                    <img src={message} alt="" />
+                  </Link>
                 </div>
               </div>
             </Link>
@@ -217,15 +218,15 @@ const Products = () => {
                   }}
                 />
                 <div className="flex   mx-auto mt-6 items-center sm:flex-row sm:items-center">
-                  <h1 className="flex-grow mb-2 text-2xl font-medium tracking-tighter text-gray-900 title-font">
+                  <h1 className="flex-grow mb-2 text-2xl font-medium tracking-tighter text-black title-font">
                     Batteries{' '}
                   </h1>
-                  <button
-                    type="button"
+                  <Link
+                    to="/button"
                     className="flex-shrink-0 px-2 py-1  font-semibold text-white transition duration-500 ease-in-out transform rounded-lg sm:mt-0 bg-gradient-to-r from-blue-700 hover:from-blue-600 to-blue-600 hover:to-blue-700 hover:-translate-y-1 hover:scale-110 focus:shadow-outline focus:outline-none"
                   >
-                    🖂
-                  </button>
+                    <img src={message} alt="" />
+                  </Link>
                 </div>
               </div>
             </Link>
@@ -241,15 +242,15 @@ const Products = () => {
                   }}
                 />
                 <div className="flex   mx-auto mt-6 items-center sm:flex-row sm:items-center">
-                  <h1 className="flex-grow mb-2 text-2xl font-medium tracking-tighter text-gray-900 title-font">
+                  <h1 className="flex-grow mb-2 text-2xl font-medium tracking-tighter text-black title-font">
                     Charge Controllers{' '}
                   </h1>
-                  <button
-                    type="button"
+                  <Link
+                    to="button"
                     className="flex-shrink-0 px-2 py-1  font-semibold text-white transition duration-500 ease-in-out transform rounded-lg sm:mt-0 bg-gradient-to-r from-blue-700 hover:from-blue-600 to-blue-600 hover:to-blue-700 hover:-translate-y-1 hover:scale-110 focus:shadow-outline focus:outline-none"
                   >
-                    🖂
-                  </button>
+                    <img src={message} alt="" />
+                  </Link>
                 </div>
               </div>
             </Link>
@@ -265,15 +266,15 @@ const Products = () => {
                   }}
                 />
                 <div className="flex   mx-auto mt-6 items-center sm:flex-row sm:items-center">
-                  <h1 className="flex-grow mb-2 text-2xl font-medium tracking-tighter text-gray-900 title-font">
+                  <h1 className="flex-grow mb-2 text-2xl font-medium tracking-tighter text-black title-font">
                     Cameras{' '}
                   </h1>
-                  <button
-                    type="button"
+                  <Link
+                    to="button"
                     className="flex-shrink-0 px-2 py-1  font-semibold text-white transition duration-500 ease-in-out transform rounded-lg sm:mt-0 bg-gradient-to-r from-blue-700 hover:from-blue-600 to-blue-600 hover:to-blue-700 hover:-translate-y-1 hover:scale-110 focus:shadow-outline focus:outline-none"
                   >
-                    🖂
-                  </button>
+                    <img src={message} alt="" />
+                  </Link>
                 </div>
               </div>
             </Link>
