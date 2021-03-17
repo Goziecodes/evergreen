@@ -1,6 +1,19 @@
-.slick-slide > div {
+/* .slick-slide > div {
   margin: 4px;
 }
 .slick-list {
   margin: -4px;
+} */
+
+.position-absolute {
+  /* position: absolute; */
+  /* bottom: 87rem;
+  width: 21rem; */
 }
+
+.swal2-popup {
+  font-size: 2rem;
+}
+/* .swal2-html-container {
+  font-size: 2rem;
+} */

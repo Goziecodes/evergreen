@@ -18,7 +18,6 @@ const SEO = ({ children, location, description, title, image }) => {
     <Helmet titleTemplate={`%s - ${site.siteMetadata.title}`}>
       <html lang="en" />
       <title>{title}</title>
-      {/* fav icons */}
       {/* Required Core Stylesheet for glider carousel */}
       <link
         rel="stylesheet"
@@ -31,8 +30,10 @@ const SEO = ({ children, location, description, title, image }) => {
         href="node_modules/@glidejs/glide/dist/css/glide.theme.min.css"
       />
 
-      <Link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-      <Link rel="alternate icon" href="/favicon.ico" />
+      {/* fav icons */}
+
+      <Link rel="icon" type="image/svg+xml" href="/logo.svg" />
+      <Link rel="alternate icon" href="/logo.svg" />
       {/* meta tags */}
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta charSet="utf-8" />

@@ -1,37 +1,44 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React from 'react';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import React from "react";
+import Slider from "react-slick";
+import { graphql, Link } from "gatsby";
+import Img from "gatsby-image";
+import Swal from "sweetalert2";
+import emailjs from "emailjs-com";
+// import dotenv from "dotenv";
 
-import { graphql, Link } from 'gatsby';
-import bulbguy from '../assets/images/bulbguy.svg';
-import innovation from '../assets/images/Innovation.svg';
-import Solar from '../assets/images/solar-panel.inline.svg';
-import Camera from '../assets/images/security-camera2.inline.svg';
-import home from '../assets/images/home.svg';
-import map from '../assets/images/map-pin.svg';
-import message from '../assets/images/message-circle.svg';
-import message2 from '../assets/images/message-square.svg';
-import send from '../assets/images/send.svg';
-import services from '../assets/images/tool.svg';
-import user from '../assets/images/user.svg';
-import arrow from '../assets/images/arrow-right.svg';
-import briefcase from '../assets/images/briefcase.svg';
-import phone from '../assets/images/phone.svg';
-import img1 from '../assets/images/close.png';
-import cam1 from '../assets/images/cam1.png';
-import panel from '../assets/images/panel.jpg';
-import ba3 from '../assets/images/ba3.png';
-import charge from '../assets/images/charge.png';
+import "./index.css";
 
-import work1 from '../assets/images/work1.jpg';
-import work2 from '../assets/images/work2.jpg';
-import work3 from '../assets/images/work3.jpg';
-import work4 from '../assets/images/work4.jpg';
-import work5 from '../assets/images/work5.jpg';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-import './index.css';
+import bulbguy from "../assets/images/bulbguy.svg";
+import innovation from "../assets/images/Innovation.svg";
+import Solar from "../assets/images/solar-panel.inline.svg";
+import Camera from "../assets/images/security-camera2.inline.svg";
+import home from "../assets/images/home.svg";
+import map from "../assets/images/map-pin.svg";
+import message1 from "../assets/images/message-circle.svg";
+import message2 from "../assets/images/message-square.svg";
+import send from "../assets/images/send.svg";
+import services from "../assets/images/tool.svg";
+import user from "../assets/images/user.svg";
+import arrow from "../assets/images/arrow-right.svg";
+import briefcase from "../assets/images/briefcase.svg";
+import phone from "../assets/images/phone.svg";
+import img1 from "../assets/images/close.png";
+import cam1 from "../assets/images/cam1.png";
+import panel from "../assets/images/panel.jpg";
+import ba3 from "../assets/images/ba3.png";
+import charge from "../assets/images/charge.png";
+
+import work1 from "../assets/images/work1.jpg";
+import work2 from "../assets/images/work2.jpg";
+import work3 from "../assets/images/work3.jpg";
+import work4 from "../assets/images/work4.jpg";
+import work5 from "../assets/images/work5.jpg";
+
+import SEO from "../components/SEO";
 
 // import DesignsFilter from '../components/DesignsFilter/DesignsFilter';
 // import ShirtsList from '../components/Shirts';
@@ -52,11 +59,19 @@ import './index.css';
 // `;
 
 const HomePage = ({ data }) => {
+  const [number, setNumber] = React.useState("");
+  const [name, setName] = React.useState("");
+  const [message, setMessage] = React.useState("");
+
   // const shirtList = data.shirts.nodes;
+  const homepageProducts = data.products.nodes;
+  const homepageProjects = data.allSanityProjectsGallery.nodes;
+  // console.log(data);
+  // console.log("see my dataa", homepageProducts);
 
   const settings = {
     autoplay: true,
-    arrows: true,
+    arrows: false,
     dots: true,
     infinite: true,
     speed: 500,
@@ -87,8 +102,54 @@ const HomePage = ({ data }) => {
     ],
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const templateParams = {
+      name,
+      number,
+      message,
+    };
+
+    emailjs
+      .send(
+        "service_vdxv9rs",
+        "template_548zm8i",
+        templateParams,
+        "user_6Tb9hqiXSez1KZsSQ3lTy"
+      )
+      .then(
+        function (response) {
+          // console.log("SUCCESS!", response.status, response.text);
+          Swal.fire({
+            text: "email sent",
+            target: "#custom-target",
+            customClass: {
+              container: "position-absolute",
+            },
+            toast: true,
+            position: "center-center",
+          });
+        },
+        function (error) {
+          // console.log("FAILED...", error);
+          Swal.fire({
+            text: "something went wrong, try again",
+            target: "#custom-target",
+            customClass: {
+              container: "position-absolute",
+            },
+            toast: true,
+            position: "center-center",
+          });
+        }
+      );
+  };
+
   return (
     <>
+      <SEO title="our Customers" />
+
       <section className="bg-white w-screen flex items-end lg:items-center flex-wrap  sm:px-20  sm:flex sm:flex-row  sm:pt-12 sm:justify-center sm:flex-row-reverse ">
         <div className="w-full sm:w-1/2 overflow-hidden">
           <img
@@ -109,13 +170,13 @@ const HomePage = ({ data }) => {
             <h1 className="font-medium">
               <b
                 className="text-blue-500 font-medium"
-                style={{ fontFamily: 'GilroyBold' }}
+                style={{ fontFamily: "GilroyBold" }}
               >
                 Electricity
               </b>
             </h1>
 
-            <h1 style={{ fontFamily: 'GilroyBold' }}>
+            <h1 style={{ fontFamily: "GilroyBold" }}>
               <span className="text-blue-300 font-medium">Gasoline</span>
               <span className="text-blue-500 font-medium"> Bills</span>
             </h1>
@@ -125,12 +186,14 @@ const HomePage = ({ data }) => {
             type="button"
             className="  hover:bg-green-700 text-white font-bold py-4 px-4 rounded-lg w-60 mt-10 text-4xl self-center sm:self-start "
             style={{
-              background: '#50b34e',
+              background: "#50b34e",
               // boxShadow: 'rgba(80, 179, 80, 1) 5px 8px 16px 6px',
-              boxShadow: '1px 2px 14px 2px rgba(82, 193, 54, 1)',
+              boxShadow: "1px 2px 14px 2px rgba(82, 193, 54, 1)",
             }}
           >
-            Start now
+            <a href="/#contact" className="text-white">
+              Start now
+            </a>
           </button>
         </div>
         {/* <div className="text-center w-full "> */}
@@ -150,11 +213,11 @@ const HomePage = ({ data }) => {
             <h1 className="text-blue-400">
               <span
                 className="text-blue-500 "
-                style={{ fontFamily: 'GilroyBold' }}
+                style={{ fontFamily: "GilroyBold" }}
               >
                 What
-              </span>{' '}
-              <b> we do</b>{' '}
+              </span>{" "}
+              <b> we do</b>{" "}
             </h1>
           </div>
 
@@ -163,10 +226,10 @@ const HomePage = ({ data }) => {
               <p className="font-medium antialiased">
                 <b
                   className="font-medium leading-10"
-                  style={{ fontFamily: 'GilroyBold' }}
+                  style={{ fontFamily: "GilroyBold" }}
                 >
                   Evergreen Technologies
-                </b>{' '}
+                </b>{" "}
                 provides innovative eco-friendly power solutions using solar
                 energy and advanced power storage devices for total independence
                 from the power grid and save you the running cost of electricity
@@ -186,11 +249,11 @@ const HomePage = ({ data }) => {
       <section id="services" className="w-full px-10  h-auto mt-32 md:mt-0">
         <div className="text-center mb-20 text-4xl lg:text-right lg:text-5xl ">
           <h1 className="text-blue-400 mb-8 mt-20 ">
-            <span>Our</span>{' '}
+            <span>Our</span>{" "}
             <span>
               <b
                 className="text-blue-500 font-normal"
-                style={{ fontFamily: 'GilroyBold' }}
+                style={{ fontFamily: "GilroyBold" }}
               >
                 Services
               </b>
@@ -223,7 +286,7 @@ const HomePage = ({ data }) => {
           <div className="text-right text-5xl px-2 text-blue-500  mb-8">
             <h3>
               <b>
-                {' '}
+                {" "}
                 Solar Installations <br /> & Maintenance
               </b>
             </h3>
@@ -244,13 +307,16 @@ const HomePage = ({ data }) => {
         </div>
       </section>
 
-      <section className="w-full overflow-hidden h-auto bg-white mt-8 clear-both ">
+      <section
+        id="products"
+        className="w-full overflow-hidden h-auto bg-white mt-8 clear-both "
+      >
         <div className="flex justify-around mb-8">
           <h1 className="text-center">
-            <span className="text-blue-400">Our</span>{' '}
+            <span className="text-blue-400">Our</span>{" "}
             <span
               className="text-blue-500 font-medium"
-              style={{ fontFamily: 'GilroyBold' }}
+              style={{ fontFamily: "GilroyBold" }}
             >
               Products
             </span>
@@ -258,79 +324,44 @@ const HomePage = ({ data }) => {
         </div>
         <div className="container px-5 py-2 mx-auto lg:px-32">
           <div className="flex flex-wrap  justify-evenly mx-auto text-black font-medium  text-sm leading-none ">
-            <div className="w-72 h-96 mt-6 lg:w-96 lg:mt-0 border-2 border-gray-200 rounded-lg">
-              <img
-                alt=""
-                className="object-cover object-center w-full h-4/5"
-                src={panel}
-              />
-              <div className="flex  px-4 mx-auto mt-6 items-center sm:flex-row sm:items-center">
-                <h1 className="flex-grow   mb-2  tracking-tighter  title-font">
-                  Solar Panels
-                </h1>
-                <button
-                  type="button"
-                  className="flex-shrink-0 px-2 py-1  font-semibold text-white transition duration-500 ease-in-out transform rounded-lg sm:mt-0 bg-gradient-to-r from-blue-700 hover:from-blue-600 to-blue-600 hover:to-blue-700 hover:-translate-y-1 hover:scale-110 focus:shadow-outline focus:outline-none"
+            {homepageProducts &&
+              homepageProducts.map((product) => (
+                <div
+                  key={product.image.asset._id}
+                  className="w-72 h-96 mt-6 lg:w-96 lg:mt-0 border-2 border-gray-200 rounded-lg"
                 >
-                  <img src={message} alt="" />
-                </button>
-              </div>
-            </div>
+                  {/* <img
+                    alt=""
+                    className="object-cover object-center w-full h-4/5"
+                    src={panel}
+                  /> */}
+                  <div className="h-4/5 w-full">
+                    <Img
+                      className="w-full h-full"
+                      fluid={product.image.asset.fluid}
+                    />
+                  </div>
 
-            <div className="w-72 h-96 mt-6 lg:w-96 lg:mt-0 border-2 border-gray-200 rounded-lg">
-              <img
-                alt=""
-                className="object-cover object-center w-full h-4/5"
-                src={ba3}
-              />
-              <div className="flex  px-4 mx-auto mt-6 items-center sm:flex-row sm:items-center">
-                <h1 className="flex-grow  mb-2    tracking-tighter  title-font">
-                  Batteries
-                </h1>
-                <button
-                  type="button"
-                  className="flex-shrink-0 px-2 py-1  font-semibold text-white transition duration-500 ease-in-out transform rounded-lg sm:mt-0 bg-gradient-to-r from-blue-700 hover:from-blue-600 to-blue-600 hover:to-blue-700 hover:-translate-y-1 hover:scale-110 focus:shadow-outline focus:outline-none"
-                >
-                  <img src={message} alt="" />
-                </button>
-              </div>
-            </div>
-            <div className="w-72 h-96 mt-6 lg:w-96 lg:mt-0 border-2 border-gray-200 rounded-lg">
-              <img
-                alt=""
-                className="object-cover object-center w-full h-4/5"
-                src={charge}
-              />
-              <div className="flex   px-4 mx-auto mt-6 items-center sm:flex-row sm:items-center">
-                <h1 className="flex-grow   tracking-tighter title-font">
-                  Charge Controllers
-                </h1>
-                <button
-                  type="button"
-                  className="flex-shrink-0 px-2 py-1  font-semibold text-white transition duration-500 ease-in-out transform rounded-lg sm:mt-0 bg-gradient-to-r from-blue-700 hover:from-blue-600 to-blue-600 hover:to-blue-700 hover:-translate-y-1 hover:scale-110 focus:shadow-outline focus:outline-none"
-                >
-                  <img src={message} alt="" />
-                </button>
-              </div>
-            </div>
-            <div className="w-72 h-96 mt-6 lg:w-96 lg:mt-0 border-2 border-gray-200 rounded-lg">
-              <img
-                alt=""
-                className="object-cover object-center w-full h-4/5"
-                src={cam1}
-              />
-              <div className="flex  px-4 mx-auto mt-6 items-center sm:flex-row sm:items-center">
-                <h1 className="flex-grow  mb-2  font-medium tracking-tighter  title-font">
-                  Cameras
-                </h1>
-                <button
-                  type="button"
-                  className="flex-shrink-0 px-2 py-1  font-semibold text-white transition duration-500 ease-in-out transform rounded-lg sm:mt-0 bg-gradient-to-r from-blue-700 hover:from-blue-600 to-blue-600 hover:to-blue-700 hover:-translate-y-1 hover:scale-110 focus:shadow-outline focus:outline-none"
-                >
-                  <img src={message} alt="" />
-                </button>
-              </div>
-            </div>
+                  <div className="flex  px-4 mx-auto mt-2 items-center sm:flex-row sm:items-center">
+                    <h1 className="flex-grow   mb-2  tracking-tighter  title-font">
+                      {product.name}
+                    </h1>
+                    <a
+                      href={`https://api.whatsapp.com/send?phone=2348063426769&text=I%20am%20interested%20in%20this%20${product.name}%20${product.image.asset.fluid.src}`}
+                      type="button"
+                      className="flex-shrink-0 px-2 py-1  font-semibold text-white transition duration-500 ease-in-out transform rounded-lg sm:mt-0 bg-gradient-to-r from-blue-700 hover:from-blue-600 to-blue-600 hover:to-blue-700 hover:-translate-y-1 hover:scale-110 focus:shadow-outline focus:outline-none"
+                    >
+                      <img src={message1} alt="" />
+                    </a>
+                    {/* <button
+                      type="button"
+                      className="flex-shrink-0 px-2 py-1  font-semibold text-white transition duration-500 ease-in-out transform rounded-lg sm:mt-0 bg-gradient-to-r from-blue-700 hover:from-blue-600 to-blue-600 hover:to-blue-700 hover:-translate-y-1 hover:scale-110 focus:shadow-outline focus:outline-none"
+                    >
+                      <img src={message} alt="" />
+                    </button> */}
+                  </div>
+                </div>
+              ))}
 
             <div className="w-full container text-center mt-20">
               <button
@@ -341,7 +372,7 @@ const HomePage = ({ data }) => {
                   className="text-white text-3xl font-medium"
                   to="/products"
                 >
-                  {' '}
+                  {" "}
                   Shop Now
                 </Link>
               </button>
@@ -350,29 +381,27 @@ const HomePage = ({ data }) => {
         </div>
       </section>
 
-      <section className="mt-20 h-auto mb-20 px-2">
+      <section id="projects" className="mt-20 h-auto mb-20 px-2">
         <div className="flex justify-between mb-8 pl-8">
           <h1 className="text-center text-5xl">
-            <span className="text-blue-400">Our</span>{' '}
+            <span className="text-blue-400">Our</span>{" "}
             <span
               className="text-blue-500 font-medium"
-              style={{ fontFamily: 'GilroyBold' }}
+              style={{ fontFamily: "GilroyBold" }}
             >
               Projects
             </span>
           </h1>
 
-          {/* <div className="flex text-4xl text-blue-400 items-center "> */}
-          <button
+          {/* <button
             type="button"
             className="mr-5 br-20 bg-blue-400 hover:bg-blue-700 text-white font-bold   rounded-lg text-lg  focus:outline-none focus:bg-blue-700"
-            style={{ transition: ' all .15s ease' }}
+            style={{ transition: " all .15s ease" }}
           >
             <Link className="text-white" to="/projects">
               <b>See More ⇒</b>
             </Link>
-          </button>
-          {/* </div> */}
+          </button> */}
         </div>
 
         <div className="px-8 mb-4  text-black font-medium">
@@ -381,9 +410,21 @@ const HomePage = ({ data }) => {
         </div>
 
         <div className="px-8 w-full ">
-          {' '}
-          <Slider {...settings} className="">
-            <div>
+          {" "}
+          <Slider {...settings} className=" ">
+            {homepageProjects &&
+              homepageProjects.map((project) => (
+                <div className="" key={project.image.asset._id}>
+                  <Img fluid={project.image.asset.fluid} alt="" />
+                  <div className="text-2xl text-center">
+                    <p>
+                      <b>{project.description}</b>
+                    </p>
+                  </div>
+                </div>
+              ))}
+
+            {/* <div>
               <img src={work1} alt="" />
               <div className="text-2xl">
                 <p>
@@ -412,7 +453,7 @@ const HomePage = ({ data }) => {
               </div>
             </div>
             <div>
-              <img src={work3} alt="" />{' '}
+              <img src={work3} alt="" />{" "}
               <div className="text-2xl">
                 <p>
                   <b>2400Ah solar bank system</b>
@@ -426,7 +467,7 @@ const HomePage = ({ data }) => {
               </div>
             </div>
             <div>
-              <img src={work4} alt="" />{' '}
+              <img src={work4} alt="" />{" "}
               <div className="text-2xl">
                 <p>
                   <b>2400Ah solar bank system</b>
@@ -440,7 +481,7 @@ const HomePage = ({ data }) => {
               </div>
             </div>
             <div>
-              <img src={work5} alt="" />{' '}
+              <img src={work5} alt="" />{" "}
               <div className="text-2xl">
                 <p>
                   <b>2400Ah solar bank system</b>
@@ -452,7 +493,7 @@ const HomePage = ({ data }) => {
                   <b>Category: Solar Installation</b>
                 </p>
               </div>
-            </div>
+            </div> */}
           </Slider>
           {/* <div className="w-full h-24 bg-red-400">d</div> */}
         </div>
@@ -465,18 +506,19 @@ const HomePage = ({ data }) => {
           <h1 className="mb-8">
             <span
               className="text-blue-500"
-              style={{ fontFamily: 'GilroyBold' }}
+              style={{ fontFamily: "GilroyBold" }}
             >
               Contact
-            </span>{' '}
+            </span>{" "}
             <span className="text-blue-400">Us</span>
           </h1>
-          <p>
-            <span className="text-blue-500">
-              <b>Got a Question??</b>{' '}
+          <p className="mb-8">
+            <span className="text-blue-500 ">
+              <b>Got a Question??</b>{" "}
             </span>
             reach out to us today
           </p>
+          <p>use the form below to email us, or chat with us on whatsapp!</p>
         </div>
 
         {/* <div className="flex justify-between mb-8 pl-8">
@@ -492,13 +534,15 @@ const HomePage = ({ data }) => {
 
         <div className="container mx-auto pt-8 w-full lg:w-3/5">
           <div className="form  mt-8 mb-8 ">
-            <form action="/yes" method="post" className="w-full ">
+            <form onSubmit={handleSubmit} className="w-full ">
               <div className=" flex  mb-8">
                 <div className="bg-blue-400 w-20  brr-20  rounded-l-lg flex justify-center items-center">
                   <img src={user} alt="" />
                 </div>
                 <input
                   type="text"
+                  name="name"
+                  onChange={(e) => setName(e.target.value)}
                   placeholder="Your full Name"
                   className="px-3 py-5 text-3xl w-full placeholder-gray-400 text-gray-700  bg-white bg-white rounded-r-lg  shadow outline-none focus:outline-none focus:shadow-outline  pl-10 border-2 border-blue-400"
                 />
@@ -510,6 +554,8 @@ const HomePage = ({ data }) => {
                 </div>
                 <input
                   type="text"
+                  name="number"
+                  onChange={(e) => setNumber(e.target.value)}
                   placeholder="Your mobile Number"
                   className="px-3 py-5 text-3xl w-full placeholder-gray-400 text-gray-700  bg-white bg-white rounded-r-lg  shadow outline-none focus:outline-none focus:shadow-outline  pl-10 border-2 border-blue-400"
                 />
@@ -521,7 +567,8 @@ const HomePage = ({ data }) => {
                   <h3>Your message/enquiry</h3>
                 </div>
                 <textarea
-                  name=""
+                  onChange={(e) => setMessage(e.target.value)}
+                  name="message"
                   id=""
                   cols="30"
                   rows="10"
@@ -531,17 +578,21 @@ const HomePage = ({ data }) => {
 
               <div className=" flex justify-center mb-2">
                 <button
-                  type="button"
+                  type="submit"
                   className="  hover:bg-green-700 text-white font-bold py-4 px-4 rounded-lg w-60 mt-4 mb-10 text-4xl self-center sm:self-start "
                   style={{
-                    background: '#50b34e',
+                    background: "#50b34e",
                     // boxShadow: 'rgba(80, 179, 80, 1) 5px 8px 16px 6px',
-                    boxShadow: '1px 2px 14px 2px rgba(82, 193, 54, 1)',
+                    boxShadow: "1px 2px 14px 2px rgba(82, 193, 54, 1)",
                   }}
                 >
                   Submit
                 </button>
               </div>
+              <div
+                className="a relative border-solid  h-52 w-96"
+                id="custom-target"
+              ></div>
             </form>
           </div>
           {/* <div className="text-center text-blue-500">
@@ -555,28 +606,40 @@ const HomePage = ({ data }) => {
     </>
   );
 };
-// export const query = graphql`
-//   query AllShirtsQuery {
-//     shirts: allSanityShirts {
-//       totalCount
-//       nodes {
-//         id
-//         name
-//         image {
-//           asset {
-//             fluid(maxWidth: 400) {
-//               ...GatsbySanityImageFluid
-//             }
-//           }
-//         }
-//         slug {
-//           current
-//         }
-//         design {
-//           name
-//         }
-//       }
-//     }
-//   }
-// `;
+
+export const query = graphql`
+  query HomePageProductsQuery {
+    products: allSanityHomePageProducts {
+      totalCount
+      nodes {
+        id
+        name
+        image {
+          asset {
+            fluid(maxWidth: 400) {
+              ...GatsbySanityImageFluid
+            }
+            _id
+          }
+        }
+        slug {
+          current
+        }
+      }
+    }
+    allSanityProjectsGallery {
+      nodes {
+        description
+        image {
+          asset {
+            fluid(maxWidth: 400, maxHeight: 400) {
+              ...GatsbySanityImageFluid
+            }
+            _id
+          }
+        }
+      }
+    }
+  }
+`;
 export default HomePage;

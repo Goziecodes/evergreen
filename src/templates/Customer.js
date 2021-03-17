@@ -1,8 +1,8 @@
-import React from 'react';
-import { graphql } from 'gatsby';
+import React from "react";
+import { graphql } from "gatsby";
 // import GatsbyImage from 'gatsby-image';
-import Img from 'gatsby-image';
-import SEO from '../components/SEO';
+import Img from "gatsby-image";
+import SEO from "../components/SEO";
 
 const Customer = ({ data: { customer } }) => (
   <>
@@ -17,21 +17,21 @@ const Customer = ({ data: { customer } }) => (
   </>
 );
 
-export const query = graphql`
-  query($slug: String!) {
-    customer: sanityPerson(slug: { current: { eq: $slug } }) {
-      name
-      id
-      description
-      image {
-        asset {
-          fluid(maxWidth: 1000, maxHeight: 750) {
-            ...GatsbySanityImageFluid
-          }
-        }
-      }
-    }
-  }
-`;
+// export const query = graphql`
+//   query($slug: String!) {
+//     customer: sanityPerson(slug: { current: { eq: $slug } }) {
+//       name
+//       id
+//       description
+//       image {
+//         asset {
+//           fluid(maxWidth: 1000, maxHeight: 750) {
+//             ...GatsbySanityImageFluid
+//           }
+//         }
+//       }
+//     }
+//   }
+// `;
 
 export default Customer;

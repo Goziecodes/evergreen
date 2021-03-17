@@ -1,9 +1,9 @@
-import React from 'react';
-import { graphql, Link } from 'gatsby';
-import Img from 'gatsby-image';
-import styled from 'styled-components';
-import Pagination from '../components/Pagination/Pagination';
-import SEO from '../components/SEO';
+import React from "react";
+import { graphql, Link } from "gatsby";
+import Img from "gatsby-image";
+import styled from "styled-components";
+import Pagination from "../components/Pagination/Pagination";
+import SEO from "../components/SEO";
 
 const CustomersGrid = styled.div`
   display: grid;
@@ -41,7 +41,7 @@ const CustomerStyle = styled.div`
 // grid-auto-rows: auto auto 500px;
 const Gallery = ({ data, pageContext }) => {
   const customers = data.clients.nodes;
-  console.log(customers, 'hereee');
+  console.log(customers, "hereee");
   return (
     <>
       <SEO title={`our Customers - page ${pageContext.currentPage || 1}`} />
@@ -69,27 +69,27 @@ const Gallery = ({ data, pageContext }) => {
   );
 };
 
-export const query = graphql`
-  query($skip: Int = 0, $pageSize: Int = 4) {
-    clients: allSanityPerson(limit: $pageSize, skip: $skip) {
-      totalCount
-      nodes {
-        name
-        id
-        slug {
-          current
-        }
-        description
-        image {
-          asset {
-            fluid(maxWidth: 410) {
-              ...GatsbySanityImageFluid
-            }
-          }
-        }
-      }
-    }
-  }
-`;
+// export const query = graphql`
+//   query($skip: Int = 0, $pageSize: Int = 4) {
+//     clients: allSanityPerson(limit: $pageSize, skip: $skip) {
+//       totalCount
+//       nodes {
+//         name
+//         id
+//         slug {
+//           current
+//         }
+//         description
+//         image {
+//           asset {
+//             fluid(maxWidth: 410) {
+//               ...GatsbySanityImageFluid
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// `;
 
 export default Gallery;

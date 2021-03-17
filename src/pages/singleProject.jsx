@@ -8,6 +8,7 @@ import work2 from '../assets/images/work2.jpg';
 import work3 from '../assets/images/work3.jpg';
 import work4 from '../assets/images/work4.jpg';
 import work5 from '../assets/images/work5.jpg';
+import bg from '../assets/images/project.png';
 
 const SingleProject = () => {
   const settings = {
@@ -83,7 +84,7 @@ const SingleProject = () => {
       </div>
 
       <div className="mb-20 text-3xl text-left px-5 lg:px-5 lg:text-4xl mt-20 ">
-        <h1 className="text-blue-400 mb-8">
+        <h1 className="text-blue-400 mb-8 text-center">
           <span>The</span>{' '}
           <span>
             <b
@@ -102,14 +103,68 @@ const SingleProject = () => {
           </h2>
         </div>
       </div>
-      <h2
+
+      {/* <h2
         className="text-blue-400 text-center text-4xl mb-8"
         style={{ fontFamily: 'GilroyBold' }}
       >
         The Process
       </h2>
 
-      <div className="text-left  w-full text-blue-400 px-10">
+      <div>
+        <div className="text-left  w-full text-blue-400 px-10">
+          <div className="w-1/2">
+            <h2
+              className="text-blue-400 text-5xl mb-8"
+              style={{ fontFamily: 'GilroyBold' }}
+            >
+              Power calculation
+            </h2>
+            <p className="text-3xl font-bold">
+              The first step was to calculate the power consumption rate and
+              wattage of his appliances to ascertain exactly how much power is
+              needed to comfortably power these appliances
+            </p>
+          </div>
+        </div>
+
+        <div className="text-right flex flex-col items-end w-full mt-20 text-red-400 px-10">
+          <div className="w-1/2">
+            {' '}
+            <h2
+              className="text-red-400 text-5xl mb-8"
+              style={{ fontFamily: 'GilroyBold' }}
+            >
+              Component Selection
+            </h2>
+            <p className="text-3xl font-bold  0">
+              next we get the best materials, panels, deep cycle batteries,
+              charge controllers and others neeeded for project
+            </p>
+          </div>
+        </div>
+
+        <div className="text-left w-full mt-20 text-pink-400 px-10">
+          <div className="w-1/2">
+            {' '}
+            <h2
+              className="text-pink-400 text-5xl mb-8"
+              style={{ fontFamily: 'GilroyBold' }}
+            >
+              Installation
+            </h2>
+            <p className="text-3xl font-bold">
+              We oversee the installation of the solar system from mounting the
+              panels to wiring the electrical comonents and interfacing the
+              system with the house power supply, making sure they are setup for
+              optimum performance and ensure the whole system doesnt take up
+              uneccessary space.
+            </p>
+          </div>
+        </div>
+      </div> */}
+
+      {/* <div className="text-left  w-full text-blue-400 px-10">
         <div className="w-1/2">
           <h2
             className="text-blue-400 text-5xl mb-8"
@@ -158,11 +213,7 @@ const SingleProject = () => {
             space.
           </p>
         </div>
-      </div>
-
-      <div className="h-96 w-full mt-40">
-        <h1>Under Construction.....</h1>
-      </div>
+      </div> */}
     </>
   );
 };

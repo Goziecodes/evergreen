@@ -1,22 +1,22 @@
-import { graphql } from 'gatsby';
-import React from 'react';
-import Img from 'gatsby-image';
-import SEO from '../components/SEO';
-import useForm from '../utils/useForm';
-import formatMoney from '../utils/formatMoney';
-import OrderFormstyles from '../styles/OrderStyles';
-import MenuItemStyles from '../styles/MenuItemStyles';
-import useShirt from '../utils/useShirt';
-import ShirtOrder from '../components/ShirtOrder';
-import calculateOrderTotal from '../utils/calculateOrderTotal';
+import { graphql } from "gatsby";
+import React from "react";
+import Img from "gatsby-image";
+import SEO from "../components/SEO";
+import useForm from "../utils/useForm";
+import formatMoney from "../utils/formatMoney";
+import OrderFormstyles from "../styles/OrderStyles";
+import MenuItemStyles from "../styles/MenuItemStyles";
+import useShirt from "../utils/useShirt";
+import ShirtOrder from "../components/ShirtOrder";
+import calculateOrderTotal from "../utils/calculateOrderTotal";
 
 const Order = ({ data }) => {
   const shirts = data.shirts.nodes;
 
   const { values, updateValue } = useForm({
-    name: '',
-    email: '',
-    mapleSyrup: '',
+    name: "",
+    email: "",
+    mapleSyrup: "",
   });
 
   const {
@@ -119,7 +119,7 @@ const Order = ({ data }) => {
           </h3>
           <div>{error ? <p>Error: {error}</p> : <p>{message}</p>}</div>
           <button disabled={loading} type="submit">
-            {loading ? 'loading...' : 'order now'}
+            {loading ? "loading..." : "order now"}
           </button>
         </fieldset>
       </OrderFormstyles>
@@ -127,30 +127,30 @@ const Order = ({ data }) => {
   );
 };
 
-export const query = graphql`
-  query {
-    shirts: allSanityShirts {
-      totalCount
-      nodes {
-        id
-        name
-        price
-        image {
-          asset {
-            fluid(maxWidth: 100) {
-              ...GatsbySanityImageFluid
-            }
-          }
-        }
-        slug {
-          current
-        }
-        design {
-          name
-        }
-      }
-    }
-  }
-`;
+// export const query = graphql`
+//   query {
+//     shirts: allSanityShirts {
+//       totalCount
+//       nodes {
+//         id
+//         name
+//         price
+//         image {
+//           asset {
+//             fluid(maxWidth: 100) {
+//               ...GatsbySanityImageFluid
+//             }
+//           }
+//         }
+//         slug {
+//           current
+//         }
+//         design {
+//           name
+//         }
+//       }
+//     }
+//   }
+// `;
 
 export default Order;

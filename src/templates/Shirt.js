@@ -1,9 +1,9 @@
-import React from 'react';
-import { graphql } from 'gatsby';
+import React from "react";
+import { graphql } from "gatsby";
 // import GatsbyImage from 'gatsby-image';
-import Img from 'gatsby-image';
-import styled from 'styled-components';
-import SEO from '../components/SEO';
+import Img from "gatsby-image";
+import styled from "styled-components";
+import SEO from "../components/SEO";
 
 const ShirtGrid = styled.div`
   display: grid;
@@ -31,24 +31,25 @@ const SingleShirtPage = ({ data: { shirt } }) => (
 );
 
 // this needs to be be dynamic based on shirt slug passed in via context in gatsby-node.js
-export const query = graphql`
-  query($slug: String!) {
-    shirt: sanityShirts(slug: { current: { eq: $slug } }) {
-      name
-      id
-      image {
-        asset {
-          fluid(maxWidth: 800) {
-            ...GatsbySanityImageFluid
-          }
-        }
-      }
-      design {
-        name
-        id
-      }
-    }
-  }
-`;
+
+// export const query = graphql`
+//   query($slug: String!) {
+//     shirt: sanityShirts(slug: { current: { eq: $slug } }) {
+//       name
+//       id
+//       image {
+//         asset {
+//           fluid(maxWidth: 800) {
+//             ...GatsbySanityImageFluid
+//           }
+//         }
+//       }
+//       design {
+//         name
+//         id
+//       }
+//     }
+//   }
+// `;
 
 export default SingleShirtPage;

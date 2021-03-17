@@ -1,8 +1,8 @@
-import React from 'react';
-import { graphql } from 'gatsby';
-import DesignsFilter from '../components/DesignsFilter/DesignsFilter';
-import ShirtsList from '../components/Shirts';
-import SEO from '../components/SEO';
+import React from "react";
+import { graphql } from "gatsby";
+import DesignsFilter from "../components/DesignsFilter/DesignsFilter";
+import ShirtsList from "../components/Shirts";
+import SEO from "../components/SEO";
 
 const Shirts = ({ data, pageContext }) => {
   const shirtList = data.shirts.nodes;
@@ -21,38 +21,38 @@ const Shirts = ({ data, pageContext }) => {
   );
 };
 
-export const query = graphql`
-  # designToFilterBy value comes directly from the context set in gatsby-node, so the variable  names must match
+// export const query = graphql`
+//   # designToFilterBy value comes directly from the context set in gatsby-node, so the variable  names must match
 
-  #   using regex
-  query ShirtsQuery($designToFilterByRegex: String) {
-    #   using equals
-    #   query ShirtsQuery($designToFilterBy: [String]) {
-    shirts: allSanityShirts(
-      filter: {
-        design: { elemMatch: { name: { regex: $designToFilterByRegex } } }
-      } #   filter: { design: { elemMatch: { name: { in: $designToFilterBy } } } }
-    ) {
-      totalCount
-      nodes {
-        id
-        name
-        image {
-          asset {
-            fluid(maxWidth: 400) {
-              ...GatsbySanityImageFluid
-            }
-          }
-        }
-        slug {
-          current
-        }
-        design {
-          name
-        }
-      }
-    }
-  }
-`;
+//   #   using regex
+//   query ShirtsQuery($designToFilterByRegex: String) {
+//     #   using equals
+//     #   query ShirtsQuery($designToFilterBy: [String]) {
+//     shirts: allSanityShirts(
+//       filter: {
+//         design: { elemMatch: { name: { regex: $designToFilterByRegex } } }
+//       } #   filter: { design: { elemMatch: { name: { in: $designToFilterBy } } } }
+//     ) {
+//       totalCount
+//       nodes {
+//         id
+//         name
+//         image {
+//           asset {
+//             fluid(maxWidth: 400) {
+//               ...GatsbySanityImageFluid
+//             }
+//           }
+//         }
+//         slug {
+//           current
+//         }
+//         design {
+//           name
+//         }
+//       }
+//     }
+//   }
+// `;
 
 export default Shirts;

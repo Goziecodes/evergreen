@@ -1,7 +1,7 @@
-import React from 'react';
-import { graphql } from 'gatsby';
-import ShirtsList from '../components/Shirts';
-import DesignsFilter from '../components/DesignsFilter/DesignsFilter';
+import React from "react";
+import { graphql } from "gatsby";
+import ShirtsList from "../components/Shirts";
+import DesignsFilter from "../components/DesignsFilter/DesignsFilter";
 
 const Men = ({ data }) => {
   const shirtList = data.shirts.nodes;
@@ -20,28 +20,28 @@ const Men = ({ data }) => {
 //   </>
 // );
 
-export const query = graphql`
-  query MensQuery {
-    shirts: allSanityShirts {
-      totalCount
-      nodes {
-        id
-        name
-        image {
-          asset {
-            fluid(maxWidth: 400) {
-              ...GatsbySanityImageFluid
-            }
-          }
-        }
-        slug {
-          current
-        }
-        design {
-          name
-        }
-      }
-    }
-  }
-`;
+// export const query = graphql`
+//   query MensQuery {
+//     shirts: allSanityShirts {
+//       totalCount
+//       nodes {
+//         id
+//         name
+//         image {
+//           asset {
+//             fluid(maxWidth: 400) {
+//               ...GatsbySanityImageFluid
+//             }
+//           }
+//         }
+//         slug {
+//           current
+//         }
+//         design {
+//           name
+//         }
+//       }
+//     }
+//   }
+// `;
 export default Men;
