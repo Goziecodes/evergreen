@@ -6,7 +6,7 @@ require('dotenv').config({
   path: '.env',
 });
 
-export default {
+module.exports = {
   siteMetadata: {
     title: `kevmiester clothings`,
     siteUrl: 'https://gatsby.pizza',
