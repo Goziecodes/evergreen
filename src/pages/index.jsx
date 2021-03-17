@@ -1,44 +1,44 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React from "react";
-import Slider from "react-slick";
-import { graphql, Link } from "gatsby";
-import Img from "gatsby-image";
-import Swal from "sweetalert2";
-import emailjs from "emailjs-com";
+import React from 'react';
+import Slider from 'react-slick';
+import { graphql, Link } from 'gatsby';
+import Img from 'gatsby-image';
+import Swal from 'sweetalert2';
+import emailjs from 'emailjs-com';
 // import dotenv from "dotenv";
 
-import "./index.css";
+import './index.css';
 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
-import bulbguy from "../assets/images/bulbguy.svg";
-import innovation from "../assets/images/Innovation.svg";
-import Solar from "../assets/images/solar-panel.inline.svg";
-import Camera from "../assets/images/security-camera2.inline.svg";
-import home from "../assets/images/home.svg";
-import map from "../assets/images/map-pin.svg";
-import message1 from "../assets/images/message-circle.svg";
-import message2 from "../assets/images/message-square.svg";
-import send from "../assets/images/send.svg";
-import services from "../assets/images/tool.svg";
-import user from "../assets/images/user.svg";
-import arrow from "../assets/images/arrow-right.svg";
-import briefcase from "../assets/images/briefcase.svg";
-import phone from "../assets/images/phone.svg";
-import img1 from "../assets/images/close.png";
-import cam1 from "../assets/images/cam1.png";
-import panel from "../assets/images/panel.jpg";
-import ba3 from "../assets/images/ba3.png";
-import charge from "../assets/images/charge.png";
+import bulbguy from '../assets/images/bulbguy.svg';
+import innovation from '../assets/images/Innovation.svg';
+import Solar from '../assets/images/solar-panel.inline.svg';
+import Camera from '../assets/images/security-camera2.inline.svg';
+import home from '../assets/images/home.svg';
+import map from '../assets/images/map-pin.svg';
+import message1 from '../assets/images/message-circle.svg';
+import message2 from '../assets/images/message-square.svg';
+import send from '../assets/images/send.svg';
+import services from '../assets/images/tool.svg';
+import user from '../assets/images/user.svg';
+import arrow from '../assets/images/arrow-right.svg';
+import briefcase from '../assets/images/briefcase.svg';
+import phone from '../assets/images/phone.svg';
+import img1 from '../assets/images/close.png';
+import cam1 from '../assets/images/cam1.png';
+import panel from '../assets/images/panel.jpg';
+import ba3 from '../assets/images/ba3.png';
+import charge from '../assets/images/charge.png';
 
-import work1 from "../assets/images/work1.jpg";
-import work2 from "../assets/images/work2.jpg";
-import work3 from "../assets/images/work3.jpg";
-import work4 from "../assets/images/work4.jpg";
-import work5 from "../assets/images/work5.jpg";
+import work1 from '../assets/images/work1.jpg';
+import work2 from '../assets/images/work2.jpg';
+import work3 from '../assets/images/work3.jpg';
+import work4 from '../assets/images/work4.jpg';
+import work5 from '../assets/images/work5.jpg';
 
-import SEO from "../components/SEO";
+import SEO from '../components/SEO';
 
 // import DesignsFilter from '../components/DesignsFilter/DesignsFilter';
 // import ShirtsList from '../components/Shirts';
@@ -59,9 +59,9 @@ import SEO from "../components/SEO";
 // `;
 
 const HomePage = ({ data }) => {
-  const [number, setNumber] = React.useState("");
-  const [name, setName] = React.useState("");
-  const [message, setMessage] = React.useState("");
+  const [number, setNumber] = React.useState('');
+  const [name, setName] = React.useState('');
+  const [message, setMessage] = React.useState('');
 
   // const shirtList = data.shirts.nodes;
   const homepageProducts = data.products.nodes;
@@ -113,34 +113,34 @@ const HomePage = ({ data }) => {
 
     emailjs
       .send(
-        "service_vdxv9rs",
-        "template_548zm8i",
+        'service_vdxv9rs',
+        'template_548zm8i',
         templateParams,
-        "user_6Tb9hqiXSez1KZsSQ3lTy"
+        'user_6Tb9hqiXSez1KZsSQ3lTy'
       )
       .then(
         function (response) {
           // console.log("SUCCESS!", response.status, response.text);
           Swal.fire({
-            text: "email sent",
-            target: "#custom-target",
+            text: 'email sent',
+            target: '#custom-target',
             customClass: {
-              container: "position-absolute",
+              container: 'position-absolute',
             },
             toast: true,
-            position: "center-center",
+            position: 'center-center',
           });
         },
         function (error) {
           // console.log("FAILED...", error);
           Swal.fire({
-            text: "something went wrong, try again",
-            target: "#custom-target",
+            text: 'something went wrong, try again',
+            target: '#custom-target',
             customClass: {
-              container: "position-absolute",
+              container: 'position-absolute',
             },
             toast: true,
-            position: "center-center",
+            position: 'center-center',
           });
         }
       );
@@ -170,13 +170,13 @@ const HomePage = ({ data }) => {
             <h1 className="font-medium">
               <b
                 className="text-blue-500 font-medium"
-                style={{ fontFamily: "GilroyBold" }}
+                style={{ fontFamily: 'GilroyBold' }}
               >
                 Electricity
               </b>
             </h1>
 
-            <h1 style={{ fontFamily: "GilroyBold" }}>
+            <h1 style={{ fontFamily: 'GilroyBold' }}>
               <span className="text-blue-300 font-medium">Gasoline</span>
               <span className="text-blue-500 font-medium"> Bills</span>
             </h1>
@@ -186,9 +186,9 @@ const HomePage = ({ data }) => {
             type="button"
             className="  hover:bg-green-700 text-white font-bold py-4 px-4 rounded-lg w-60 mt-10 text-4xl self-center sm:self-start "
             style={{
-              background: "#50b34e",
+              background: '#50b34e',
               // boxShadow: 'rgba(80, 179, 80, 1) 5px 8px 16px 6px',
-              boxShadow: "1px 2px 14px 2px rgba(82, 193, 54, 1)",
+              boxShadow: '1px 2px 14px 2px rgba(82, 193, 54, 1)',
             }}
           >
             <a href="/#contact" className="text-white">
@@ -213,11 +213,11 @@ const HomePage = ({ data }) => {
             <h1 className="text-blue-400">
               <span
                 className="text-blue-500 "
-                style={{ fontFamily: "GilroyBold" }}
+                style={{ fontFamily: 'GilroyBold' }}
               >
                 What
-              </span>{" "}
-              <b> we do</b>{" "}
+              </span>{' '}
+              <b> we do</b>{' '}
             </h1>
           </div>
 
@@ -226,10 +226,10 @@ const HomePage = ({ data }) => {
               <p className="font-medium antialiased">
                 <b
                   className="font-medium leading-10"
-                  style={{ fontFamily: "GilroyBold" }}
+                  style={{ fontFamily: 'GilroyBold' }}
                 >
                   Evergreen Technologies
-                </b>{" "}
+                </b>{' '}
                 provides innovative eco-friendly power solutions using solar
                 energy and advanced power storage devices for total independence
                 from the power grid and save you the running cost of electricity
@@ -249,11 +249,11 @@ const HomePage = ({ data }) => {
       <section id="services" className="w-full px-10  h-auto mt-32 md:mt-0">
         <div className="text-center mb-20 text-4xl lg:text-right lg:text-5xl ">
           <h1 className="text-blue-400 mb-8 mt-20 ">
-            <span>Our</span>{" "}
+            <span>Our</span>{' '}
             <span>
               <b
                 className="text-blue-500 font-normal"
-                style={{ fontFamily: "GilroyBold" }}
+                style={{ fontFamily: 'GilroyBold' }}
               >
                 Services
               </b>
@@ -286,7 +286,7 @@ const HomePage = ({ data }) => {
           <div className="text-right text-5xl px-2 text-blue-500  mb-8">
             <h3>
               <b>
-                {" "}
+                {' '}
                 Solar Installations <br /> & Maintenance
               </b>
             </h3>
@@ -313,10 +313,10 @@ const HomePage = ({ data }) => {
       >
         <div className="flex justify-around mb-8">
           <h1 className="text-center">
-            <span className="text-blue-400">Our</span>{" "}
+            <span className="text-blue-400">Our</span>{' '}
             <span
               className="text-blue-500 font-medium"
-              style={{ fontFamily: "GilroyBold" }}
+              style={{ fontFamily: 'GilroyBold' }}
             >
               Products
             </span>
@@ -335,12 +335,14 @@ const HomePage = ({ data }) => {
                     className="object-cover object-center w-full h-4/5"
                     src={panel}
                   /> */}
-                  <div className="h-4/5 w-full">
-                    <Img
-                      className="w-full h-full"
-                      fluid={product.image.asset.fluid}
-                    />
-                  </div>
+                  <Link to={`/product/${product.slug.current}`}>
+                    <div className="h-4/5 w-full">
+                      <Img
+                        className="w-full h-full"
+                        fluid={product.image.asset.fluid}
+                      />
+                    </div>
+                  </Link>
 
                   <div className="flex  px-4 mx-auto mt-2 items-center sm:flex-row sm:items-center">
                     <h1 className="flex-grow   mb-2  tracking-tighter  title-font">
@@ -372,7 +374,7 @@ const HomePage = ({ data }) => {
                   className="text-white text-3xl font-medium"
                   to="/products"
                 >
-                  {" "}
+                  {' '}
                   Shop Now
                 </Link>
               </button>
@@ -384,10 +386,10 @@ const HomePage = ({ data }) => {
       <section id="projects" className="mt-20 h-auto mb-20 px-2">
         <div className="flex justify-between mb-8 pl-8">
           <h1 className="text-center text-5xl">
-            <span className="text-blue-400">Our</span>{" "}
+            <span className="text-blue-400">Our</span>{' '}
             <span
               className="text-blue-500 font-medium"
-              style={{ fontFamily: "GilroyBold" }}
+              style={{ fontFamily: 'GilroyBold' }}
             >
               Projects
             </span>
@@ -410,7 +412,7 @@ const HomePage = ({ data }) => {
         </div>
 
         <div className="px-8 w-full ">
-          {" "}
+          {' '}
           <Slider {...settings} className=" ">
             {homepageProjects &&
               homepageProjects.map((project) => (
@@ -506,15 +508,15 @@ const HomePage = ({ data }) => {
           <h1 className="mb-8">
             <span
               className="text-blue-500"
-              style={{ fontFamily: "GilroyBold" }}
+              style={{ fontFamily: 'GilroyBold' }}
             >
               Contact
-            </span>{" "}
+            </span>{' '}
             <span className="text-blue-400">Us</span>
           </h1>
           <p className="mb-8">
             <span className="text-blue-500 ">
-              <b>Got a Question??</b>{" "}
+              <b>Got a Question??</b>{' '}
             </span>
             reach out to us today
           </p>
@@ -581,9 +583,9 @@ const HomePage = ({ data }) => {
                   type="submit"
                   className="  hover:bg-green-700 text-white font-bold py-4 px-4 rounded-lg w-60 mt-4 mb-10 text-4xl self-center sm:self-start "
                   style={{
-                    background: "#50b34e",
+                    background: '#50b34e',
                     // boxShadow: 'rgba(80, 179, 80, 1) 5px 8px 16px 6px',
-                    boxShadow: "1px 2px 14px 2px rgba(82, 193, 54, 1)",
+                    boxShadow: '1px 2px 14px 2px rgba(82, 193, 54, 1)',
                   }}
                 >
                   Submit
@@ -592,7 +594,7 @@ const HomePage = ({ data }) => {
               <div
                 className="a relative border-solid  h-52 w-96"
                 id="custom-target"
-              ></div>
+              />
             </form>
           </div>
           {/* <div className="text-center text-blue-500">

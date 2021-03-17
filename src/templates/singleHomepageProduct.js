@@ -127,10 +127,9 @@ const SingleProduct = ({ data: { product } }) => {
 
 export const query = graphql`
   query($slug: String!) {
-    product: sanityProducts(slug: { current: { eq: $slug } }) {
+    product: sanityHomePageProducts(slug: { current: { eq: $slug } }) {
       name
       id
-      category
       slug {
         current
       }

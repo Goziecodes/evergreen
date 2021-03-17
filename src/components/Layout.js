@@ -1,15 +1,15 @@
-import React from "react";
-import styled from "styled-components";
-import "normalize.css";
-import { Link } from "gatsby";
-import Nav from "./Nav";
-import Footer from "./Footer";
-import GlobalStyles from "../styles/GlobalStyles";
-import Typography from "../styles/Typography";
-import message from "../assets/images/message-circle.svg";
-import whatsapp from "../assets/images/whatsapp2.svg";
-import whatsapp1 from "../assets/images/whatsapp.png";
-import whatsapp2 from "../assets/images/whatsapp.gif";
+import React from 'react';
+import styled from 'styled-components';
+import 'normalize.css';
+import { Link } from 'gatsby';
+import Nav from './Nav';
+import Footer from './Footer';
+import GlobalStyles from '../styles/GlobalStyles';
+import Typography from '../styles/Typography';
+import message from '../assets/images/message-circle.svg';
+import whatsapp from '../assets/images/whatsapp2.svg';
+import whatsapp1 from '../assets/images/whatsapp.png';
+import whatsapp2 from '../assets/images/whatsapp.gif';
 
 const FloatingButton = styled.div`
   border-radius: 50%;
@@ -29,7 +29,7 @@ const FloatingButton = styled.div`
 
 const Layout = ({ children }) => (
   <>
-    <a href="https://api.whatsapp.com/send?phone=2348063426769&text=I%20want%20to%20get%20solar%20panels%20from%20you">
+    <a href="https://api.whatsapp.com/send?phone=2348063426769&text=I%20want%20to%20make%20enquiries%20about%20your%20solar%20systems">
       <FloatingButton className="" />
     </a>
     <GlobalStyles />
